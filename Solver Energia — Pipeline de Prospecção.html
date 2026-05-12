@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0254)file:///C:/Users/bruno/AppData/Local/Packages/Claude_pzs8sxrjxfjjc/LocalCache/Roaming/Claude/local-agent-mode-sessions/02312a18-e77e-4076-b46d-fe0c96edba08/046d5abd-5016-4544-884c-99a49bd674c6/local_51a2c6e8-f25c-4b94-bc68-a063aae886e8/outputs/index.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solver Energia — Pipeline de Prospecção</title>
+<script src="./Solver Energia — Pipeline de Prospecção_files/chart.umd.min.js.download"></script>
+<style>
+:root {
+  --blue-dark: #0a2d5e;
+  --blue: #1a4fa0;
+  --blue-mid: #2563eb;
+  --blue-light: #4EAFD4;
+  --teal: #00897b;
+  --green: #16a34a;
+  --orange: #ea580c;
+  --red: #dc2626;
+  --yellow: #d97706;
+  --purple: #7c3aed;
+  --bg: #f0f4f8;
+  --card: #ffffff;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:14px;min-height:100vh}
+
+/* ── HERO HEADER ── */
+.hero{
+  background:linear-gradient(135deg,#0a2d5e 0%,#1a4fa0 50%,#0e3a7a 100%);
+  padding:28px 32px 32px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-inner{max-width:1300px;margin:0 auto;position:relative;z-index:1}
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.logo-area{display:flex;align-items:center;gap:14px}
+.logo-svg{flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(255,165,0,0.35))}
+.logo-text{display:flex;flex-direction:column}
+.logo-brand{display:flex;align-items:baseline;gap:6px}
+.logo-solver{font-size:26px;font-weight:900;color:#4EAFD4;letter-spacing:2px}
+.logo-energia{font-size:26px;font-weight:200;color:#90c4d8;letter-spacing:3px}
+.logo-tagline{font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:.5px;margin-top:2px}
+.hero-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.badge-live{background:linear-gradient(135deg,#16a34a,#22c55e);color:white;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;box-shadow:0 2px 8px rgba(22,163,74,.4)}
+.badge-date{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);padding:5px 12px;border-radius:20px;font-size:12px;backdrop-filter:blur(8px)}
+.btn-update{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:white;padding:7px 16px;border-radius:8px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px}
+.btn-update:hover{background:rgba(255,255,255,.22)}
+.hero-subtitle{margin-top:16px;font-size:15px;color:rgba(255,255,255,.7);font-weight:300}
+.hero-subtitle strong{color:white;font-weight:600}
+
+/* ── ALERTS ── */
+.alerts-area{max-width:1300px;margin:0 auto;padding:20px 32px 0}
+
+/* ── NAV TABS ── */
+.nav-wrap{background:white;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.nav{max-width:1300px;margin:0 auto;display:flex;padding:0 32px;overflow-x:auto;gap:0}
+.nav-item{padding:14px 18px;font-size:13px;font-weight:500;color:var(--text-muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .15s;display:flex;align-items:center;gap:6px}
+.nav-item:hover{color:var(--blue)}
+.nav-item.on{color:var(--blue);border-bottom-color:var(--blue);font-weight:600}
+.nav-item .n-badge{background:var(--red);color:white;border-radius:9px;padding:1px 6px;font-size:10px;font-weight:700}
+
+/* ── MAIN ── */
+.main{max-width:1300px;margin:0 auto;padding:24px 32px}
+.tab{display:none}.tab.on{display:block}
+
+/* ── KPI GRID ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:24px}
+.kpi-card{
+  background:white;border-radius:14px;padding:20px;border:1px solid var(--border);
+  position:relative;overflow:hidden;cursor:default;
+  transition:transform .2s,box-shadow .2s;
+}
+.kpi-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:14px 14px 0 0}
+.kpi-card.c-blue::before{background:linear-gradient(90deg,#1a4fa0,#4EAFD4)}
+.kpi-card.c-teal::before{background:linear-gradient(90deg,#00897b,#4db6ac)}
+.kpi-card.c-green::before{background:linear-gradient(90deg,#16a34a,#4ade80)}
+.kpi-card.c-orange::before{background:linear-gradient(90deg,#ea580c,#fb923c)}
+.kpi-card.c-red::before{background:linear-gradient(90deg,#dc2626,#f87171)}
+.kpi-card.c-purple::before{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.kpi-glow{position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;opacity:.06}
+.c-blue .kpi-glow{background:#1a4fa0}
+.c-teal .kpi-glow{background:#00897b}
+.c-green .kpi-glow{background:#16a34a}
+.c-orange .kpi-glow{background:#ea580c}
+.c-red .kpi-glow{background:#dc2626}
+.c-purple .kpi-glow{background:#7c3aed}
+.kpi-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text-muted);margin-bottom:8px}
+.kpi-value{font-size:30px;font-weight:900;line-height:1;color:var(--text);font-variant-numeric:tabular-nums}
+.kpi-sub{font-size:11px;color:var(--text-muted);margin-top:6px}
+.kpi-trend{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;margin-top:5px}
+.kpi-trend.up{color:var(--green)}.kpi-trend.down{color:var(--red)}.kpi-trend.warn{color:var(--orange)}
+
+/* ── ALERTS ── */
+.alert{border-radius:12px;padding:14px 18px;margin-bottom:12px;border-left:4px solid;display:flex;gap:12px;align-items:flex-start;animation:slideIn .4s ease}
+@keyframes slideIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+.alert.danger{background:linear-gradient(135deg,#fff5f5,#fff);border-color:var(--red);box-shadow:0 2px 8px rgba(220,38,38,.1)}
+.alert.warning{background:linear-gradient(135deg,#fffbf0,#fff);border-color:var(--yellow)}
+.alert.success{background:linear-gradient(135deg,#f0fdf4,#fff);border-color:var(--green)}
+.alert.info{background:linear-gradient(135deg,#f0f6ff,#fff);border-color:var(--blue)}
+.alert-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.alert-title{font-weight:700;font-size:13px}
+.alert-desc{font-size:12px;color:var(--text-muted);margin-top:2px}
+
+/* ── SECTION HEADER ── */
+.sec-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.sec-title{font-size:16px;font-weight:800;color:var(--text)}
+.sec-sub{font-size:12px;color:var(--text-muted);margin-top:1px}
+.sec-badge{background:var(--bg);border:1px solid var(--border);padding:3px 10px;border-radius:10px;font-size:12px;font-weight:600;color:var(--text-muted)}
+
+/* ── CARD ── */
+.card{background:white;border-radius:14px;border:1px solid var(--border);overflow:hidden;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.card-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.card-title{font-size:14px;font-weight:700}
+.card-body{padding:20px}
+
+/* ── GRID ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:20px}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+
+/* ── KANBAN ── */
+.kanban{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;overflow-x:auto;padding-bottom:8px}
+@media(max-width:1100px){.kanban{grid-template-columns:repeat(3,1fr)}}
+.kanban-col{background:var(--bg);border-radius:12px;padding:12px;min-width:160px;border:1px solid var(--border)}
+.kanban-header{margin-bottom:12px}
+.kanban-stage{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.kanban-count{font-size:20px;font-weight:900;line-height:1;margin-top:2px}
+.kanban-sub{font-size:10px;color:var(--text-muted);margin-top:1px}
+.kanban-col.col-1 .kanban-stage{color:#1a4fa0}
+.kanban-col.col-2 .kanban-stage{color:#7c3aed}
+.kanban-col.col-3 .kanban-stage{color:#ea580c}
+.kanban-col.col-4 .kanban-stage{color:#d97706}
+.kanban-col.col-5 .kanban-stage{color:#dc2626}
+.kanban-col.col-6 .kanban-stage{color:#16a34a}
+.kanban-col.col-1{border-top:3px solid #1a4fa0}
+.kanban-col.col-2{border-top:3px solid #7c3aed}
+.kanban-col.col-3{border-top:3px solid #ea580c}
+.kanban-col.col-4{border-top:3px solid #d97706}
+.kanban-col.col-5{border-top:3px solid #dc2626}
+.kanban-col.col-6{border-top:3px solid #16a34a}
+.deal-card{
+  background:white;border-radius:10px;padding:12px;margin-bottom:8px;
+  border:1px solid var(--border);cursor:default;
+  transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.05);
+  position:relative;overflow:hidden;
+}
+.deal-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.deal-card.urgent{border-color:#fca5a5;background:linear-gradient(135deg,#fff5f5,#fff)}
+.deal-card.urgent::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red),#f87171)}
+.deal-card.warm::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),#fb923c)}
+.dc-company{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px}
+.dc-amount{font-size:16px;font-weight:900;color:var(--blue);margin-bottom:6px}
+.dc-meta{font-size:11px;color:var(--text-muted);margin-bottom:6px}
+.dc-prob-bar{background:var(--border);border-radius:3px;height:4px;overflow:hidden;margin-bottom:3px}
+.dc-prob-fill{height:100%;border-radius:3px;transition:width 1s ease}
+.dc-prob-label{font-size:10px;color:var(--text-muted)}
+.dc-flag{display:inline-block;padding:2px 7px;border-radius:8px;font-size:10px;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+.dc-flag.urgent{background:#fee2e2;color:var(--red);animation:pulse 1.5s ease-in-out infinite}
+.dc-flag.warm{background:#fff7ed;color:var(--orange)}
+.dc-flag.normal{background:#f0f6ff;color:var(--blue)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+.dc-link{display:block;margin-top:8px;font-size:11px;color:var(--blue);text-decoration:none;font-weight:600}
+.dc-link:hover{text-decoration:underline}
+.dc-action{font-size:11px;color:var(--text-muted);background:var(--bg);padding:6px 8px;border-radius:6px;margin-top:6px;line-height:1.4}
+.dc-action strong{color:var(--text);font-size:11px}
+.kanban-empty{text-align:center;padding:16px 8px;font-size:11px;color:var(--text-muted);font-style:italic}
+
+/* ── CHARTS ── */
+.chart-box{position:relative;height:280px}
+.chart-box.tall{height:340px}
+.chart-box.short{height:200px}
+
+/* ── AI INSIGHTS ── */
+.insights-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+@media(max-width:800px){.insights-grid{grid-template-columns:1fr}}
+.insight-card{
+  background:white;border-radius:14px;padding:18px;border:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.insight-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px;border-radius:0 3px 3px 0}
+.insight-card.priority::before{background:linear-gradient(180deg,var(--red),var(--orange))}
+.insight-card.opportunity::before{background:linear-gradient(180deg,var(--green),var(--teal))}
+.insight-card.risk::before{background:linear-gradient(180deg,var(--orange),var(--yellow))}
+.insight-card.strategy::before{background:linear-gradient(180deg,var(--blue),var(--purple))}
+.insight-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px}
+.priority .insight-tag{background:#fee2e2;color:var(--red)}
+.opportunity .insight-tag{background:#dcfce7;color:var(--green)}
+.risk .insight-tag{background:#fff7ed;color:var(--orange)}
+.strategy .insight-tag{background:#ede9fe;color:var(--purple)}
+.insight-title{font-size:14px;font-weight:700;margin-bottom:6px;color:var(--text)}
+.insight-body{font-size:13px;color:var(--text-muted);line-height:1.6}
+.insight-action{margin-top:10px;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:600}
+.priority .insight-action{background:#fee2e2;color:var(--red)}
+.opportunity .insight-action{background:#dcfce7;color:var(--green)}
+.risk .insight-action{background:#fff7ed;color:var(--orange)}
+.strategy .insight-action{background:#ede9fe;color:var(--purple)}
+
+/* ── TIMELINE ── */
+.timeline{list-style:none}
+.tl-item{display:flex;gap:12px;padding-bottom:16px;position:relative}
+.tl-item:not(:last-child)::before{content:'';position:absolute;left:15px;top:30px;bottom:0;width:2px;background:linear-gradient(180deg,var(--border),transparent)}
+.tl-dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;border:2px solid white;box-shadow:0 0 0 2px var(--border)}
+.tl-dot.r{background:#fee2e2}.tl-dot.o{background:#fff7ed}.tl-dot.b{background:#eff6ff}.tl-dot.g{background:#f0fdf4}
+.tl-content{flex:1}
+.tl-title{font-size:13px;font-weight:700;color:var(--text)}
+.tl-when{font-size:11px;color:var(--text-muted)}
+.tl-note{font-size:12px;color:var(--text-muted);margin-top:5px;background:var(--bg);padding:8px 10px;border-radius:8px;line-height:1.5}
+
+/* ── TABLE ── */
+.tbl-ctrl{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
+.tbl-search{
+  flex:1;min-width:200px;padding:9px 14px 9px 36px;border:1px solid var(--border);border-radius:10px;font-size:13px;
+  background:white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") 10px center no-repeat;
+  outline:none;transition:border .15s;
+}
+.tbl-search:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,79,160,.1)}
+.tbl-sel{padding:9px 12px;border:1px solid var(--border);border-radius:10px;font-size:13px;background:white;cursor:pointer;outline:none}
+.tbl-sel:focus{border-color:var(--blue)}
+.tbl-btn{padding:9px 16px;background:var(--blue);color:white;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s;white-space:nowrap}
+.tbl-btn:hover{background:#1e40af}
+.tbl-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;background:white}
+thead th{padding:11px 14px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);background:var(--bg);border-bottom:1px solid var(--border);cursor:pointer;white-space:nowrap;user-select:none}
+thead th:hover{color:var(--blue)}
+tbody tr{border-bottom:1px solid var(--border);transition:background .1s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:#f8fafc}
+td{padding:11px 14px;font-size:13px}
+.td-co{font-weight:600;color:var(--text)}
+.td-role{font-size:12px;color:var(--text-muted)}
+.chip{display:inline-block;padding:3px 9px;border-radius:12px;font-size:11px;font-weight:600;white-space:nowrap}
+.chip.apresentacao{background:#eff6ff;color:#1d4ed8}
+.chip.auditoria{background:#f0fdf4;color:#15803d}
+.chip.tradener{background:#fff7ed;color:#c2410c}
+.chip.IN_PROGRESS{background:#eff6ff;color:#1d4ed8}
+.chip.CONNECTED{background:#f0fdf4;color:#15803d}
+.chip.BAD_TIMING{background:#fefce8;color:#a16207}
+.chip.UNQUALIFIED{background:#fff1f2;color:#be123c}
+.chip.OPEN_DEAL{background:#faf5ff;color:#7e22ce}
+.td-date{font-size:12px;white-space:nowrap}
+.td-date.old{color:var(--red);font-weight:700}
+.td-date.recent{color:var(--green);font-weight:600}
+.td-link a{color:var(--blue);font-size:12px;text-decoration:none;font-weight:600}
+.td-link a:hover{text-decoration:underline}
+.pager{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--bg);border-top:1px solid var(--border);flex-wrap:wrap;gap:8px}
+.pager-info{font-size:12px;color:var(--text-muted)}
+.pager-btns{display:flex;gap:4px}
+.pg-btn{padding:5px 11px;border:1px solid var(--border);border-radius:7px;background:white;font-size:12px;cursor:pointer;transition:all .15s}
+.pg-btn.on{background:var(--blue);color:white;border-color:var(--blue)}
+.pg-btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* ── FUNNEL SECTION ── */
+.tracks-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px}
+@media(max-width:900px){.tracks-grid{grid-template-columns:1fr}}
+.track-card{border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+.track-head{padding:16px;color:white;display:flex;align-items:flex-start;gap:10px}
+.track-head.a{background:linear-gradient(135deg,#1565c0,#1a4fa0)}
+.track-head.b{background:linear-gradient(135deg,#00695c,#00897b)}
+.track-head.c{background:linear-gradient(135deg,#e65100,#f4511e)}
+.track-icon{width:32px;height:32px;background:rgba(255,255,255,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.track-name{font-size:16px;font-weight:800}
+.track-sub{font-size:11px;opacity:.8;margin-top:1px}
+.track-stages{background:white}
+.track-stage{display:flex;align-items:center;padding:10px 14px;border-bottom:1px solid var(--border);gap:10px;transition:background .1s}
+.track-stage:last-child{border-bottom:none}
+.track-stage:hover{background:#f8fafc}
+.ts-num{width:22px;height:22px;border-radius:50%;color:white;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.track-head.a+.track-stages .ts-num{background:#1565c0}
+.track-head.b+.track-stages .ts-num{background:#00695c}
+.track-head.c+.track-stages .ts-num{background:#e65100}
+.ts-name{flex:1;font-size:12px;font-weight:500}
+.ts-sub{font-size:10px;color:var(--text-muted)}
+.ts-badge{padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap}
+.ts-badge.live{background:#dcfce7;color:#15803d;border:1px solid #86efac}
+.ts-badge.idle{background:var(--bg);color:var(--text-muted);border:1px solid var(--border)}
+
+/* ── HISTORY TABLE ── */
+.won-table tbody tr:hover{background:#f0fdf4}
+
+/* ── SCROLL ── */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px}
+
+/* ── FOOTER ── */
+.footer{text-align:center;padding:32px;color:var(--text-muted);font-size:12px;border-top:1px solid var(--border);margin-top:32px}
+.footer strong{color:var(--text)}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HERO ══════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="logo-area">
+        <svg class="logo-svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+          <defs>
+            <lineargradient id="lg1" x1="16" y1="6" x2="36" y2="46" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FFE066"></stop>
+              <stop offset="45%" stop-color="#FF9D00"></stop>
+              <stop offset="100%" stop-color="#FF5500"></stop>
+            </lineargradient>
+            <filter id="glow"><fegaussianblur stdDeviation="2" result="blur"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+          </defs>
+          <path d="M26 3 L49 26 L26 49 L3 26 Z" stroke="#FFA500" stroke-width="2" fill="none" opacity=".8"></path>
+          <path d="M31 9 L19 26 L27 26 L21 43 L33 24 L25 24 Z" fill="url(#lg1)" filter="url(#glow)"></path>
+        </svg>
+        <div class="logo-text">
+          <div class="logo-brand">
+            <span class="logo-solver">SOLVER</span>
+            <span class="logo-energia">ENERGIA</span>
+          </div>
+          <div class="logo-tagline">Gestão de Energia e Gás · Pipeline de Prospecção</div>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <span class="badge-date" id="dateDisplay">terça-feira, 12 de maio de 2026</span>
+        <span class="badge-live">● AO VIVO</span>
+        <button class="btn-update" onclick="location.reload()">↻ Atualizar</button>
+      </div>
+    </div>
+    <div class="hero-subtitle">Olá, <strong>Antonio Carlos</strong> 👋 — Aqui está o resumo completo do pipeline desta semana.</div>
+  </div>
+</div>
+
+<!-- ══════════════ NAV ══════════════ -->
+<div class="nav-wrap">
+  <div class="nav">
+    <div class="nav-item on" onclick="showTab(&#39;overview&#39;,this)">📊 Visão Geral</div>
+    <div class="nav-item" onclick="showTab(&#39;kanban&#39;,this)">🗂 Pipeline Kanban <span class="n-badge" id="urgentBadge">2</span></div>
+    <div class="nav-item" onclick="showTab(&#39;insights&#39;,this)">🧠 Análise IA</div>
+    <div class="nav-item" onclick="showTab(&#39;contacts&#39;,this)">👥 Prospectos</div>
+    <div class="nav-item" onclick="showTab(&#39;funnel&#39;,this)">🔽 Funil</div>
+    <div class="nav-item" onclick="showTab(&#39;history&#39;,this)">📈 Histórico</div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ══════════════ TAB: VISÃO GERAL ══════════════ -->
+<div id="tab-overview" class="tab on">
+
+  <div id="alertsArea" style="margin-bottom:20px"><div class="alert danger"><div class="alert-icon">🚨</div><div><div class="alert-title">Nova Dublagem — Fecha em 3 dias (15/05/2026)</div><div class="alert-desc">Estágio: Chamou p/ negociação · 90% probabilidade · R$3.500/mês · <strong>Ação: Enviar contrato e confirmar data de assinatura — HOJE</strong></div></div></div><div class="alert danger"><div class="alert-icon">🚨</div><div><div class="alert-title">Apolo — Fecha em 3 dias (15/05/2026)</div><div class="alert-desc">Estágio: Agendou reunião · 30% probabilidade · R$3.500/mês · <strong>Ação: Preparar e enviar proposta urgente — fecha em 3 dias</strong></div></div></div></div>
+
+  <div class="kpi-grid" id="kpiGrid">
+    <div class="kpi-card c-red"><div class="kpi-glow"></div><div class="kpi-label">Urgente — fecha em 3 dias</div><div class="kpi-value" data-target="2" data-prefix="">2</div><div class="kpi-sub">Nova Dublagem + Apolo</div><div class="kpi-trend down">⚠ Ação hoje</div></div>
+    <div class="kpi-card c-blue"><div class="kpi-glow"></div><div class="kpi-label">Prospectos ativos</div><div class="kpi-value" data-target="563" data-prefix="">563</div><div class="kpi-sub">Contatos IN_PROGRESS</div><div class="kpi-trend up">↑ 3 trilhas ativas</div></div>
+    <div class="kpi-card c-teal"><div class="kpi-glow"></div><div class="kpi-label">Pipeline total</div><div class="kpi-value" data-target="14" data-prefix="R$" data-suffix="k">R$14k</div><div class="kpi-sub">4 negócios em aberto · /mês</div><div class="kpi-trend warn">⚡ R$7,7k ponderado</div></div>
+    <div class="kpi-card c-orange"><div class="kpi-glow"></div><div class="kpi-label">Negócios abertos</div><div class="kpi-value" data-target="4" data-prefix="">4</div><div class="kpi-sub">+ 2 chegando em breve</div></div>
+    <div class="kpi-card c-green"><div class="kpi-glow"></div><div class="kpi-label">Taxa de conversão</div><div class="kpi-value" data-target="24" data-prefix="" data-suffix="%">24%</div><div class="kpi-sub">24 ganhos / 99 deals histórico</div><div class="kpi-trend up">↑ Acima da média B2B</div></div>
+    <div class="kpi-card c-purple"><div class="kpi-glow"></div><div class="kpi-label">Clientes conquistados</div><div class="kpi-value" data-target="24" data-prefix="">24</div><div class="kpi-sub">Desde 2018 · gestão de energia</div><div class="kpi-trend up">↑ Base sólida</div></div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-head"><span class="card-title">Pipeline por Estágio</span><span class="sec-badge">Dados ao vivo</span></div>
+      <div class="card-body"><div class="chart-box"><canvas id="cStages" width="566" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 566px;"></canvas></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="card-title">Distribuição por Trilha</span><span class="sec-badge">563 prospectos</span></div>
+      <div class="card-body"><div class="chart-box"><canvas id="cTracks" width="566" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 566px;"></canvas></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="card-title">🎯 Plano de Ação da Semana</span></div>
+    <div class="card-body">
+      <ul class="timeline">
+        <li class="tl-item"><div class="tl-dot r">🚨</div><div class="tl-content"><div class="tl-title">Nova Dublagem — Fechar contrato (fecha 15/05 · 3 dias)</div><div class="tl-when">HOJE — Probabilidade 90% · R$3.500/mês</div><div class="tl-note">Enviar contrato para assinatura. Confirmar data de início de gestão. Este é o negócio mais adiantado — não deixar esfriar.</div></div></li>
+        <li class="tl-item"><div class="tl-dot r">⚡</div><div class="tl-content"><div class="tl-title">Apolo — Enviar proposta urgente (fecha 15/05 · 3 dias)</div><div class="tl-when">HOJE ou amanhã — Probabilidade 30% · R$3.500/mês</div><div class="tl-note">Reunião já aconteceu. Proposta precisa sair hoje para ter tempo de negociação antes do prazo.</div></div></li>
+        <li class="tl-item"><div class="tl-dot o">📄</div><div class="tl-content"><div class="tl-title">SuperLigas + Ibéria Embalagens — Follow-up de proposta</div><div class="tl-when">Até quarta-feira — Prob. 50% cada · R$3.500/mês</div><div class="tl-note">Ambas receberam proposta. Ligar para verificar dúvidas e acelerar decisão. Fecham em 19 dias.</div></div></li>
+        <li class="tl-item"><div class="tl-dot b">📧</div><div class="tl-content"><div class="tl-title">E-mail mensal de benchmark — Trilha Auditoria</div><div class="tl-when">1º dia útil de Junho</div><div class="tl-note">Manter a cadência com os ~145 clientes já no Mercado Livre. Principal canal de nutrição da Trilha Auditoria.</div></div></li>
+        <li class="tl-item"><div class="tl-dot o">🔥</div><div class="tl-content"><div class="tl-title">Reativar clientes Tradener / Recuperação Judicial</div><div class="tl-when">Esta semana — ~38 prospects identificados</div><div class="tl-note">Comercializadoras em crise (Tradener, IBS, Electra, Gamma). Alta urgência = ciclo de fechamento rápido. Abordagem direta com diagnóstico gratuito.</div></div></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════ TAB: KANBAN ══════════════ -->
+<div id="tab-kanban" class="tab">
+  <div class="sec-header">
+    <div><div class="sec-title">Pipeline Kanban — Negócios Ativos</div><div class="sec-sub">Arraste mentalmente os cards pelo funil</div></div>
+    <span class="sec-badge" id="kanbanTotal">4 deals · R$14k/mês</span>
+  </div>
+
+  <div class="kanban" id="kanbanBoard"><div class="kanban-col col-1">
+      <div class="kanban-header">
+        <div class="kanban-stage">Abordagem</div>
+        <div class="kanban-count">0</div>
+        <div class="kanban-sub">sem deals</div>
+      </div>
+      <div class="kanban-empty">Nenhum deal aqui</div>
+    </div><div class="kanban-col col-2">
+      <div class="kanban-header">
+        <div class="kanban-stage">Agendou Reunião</div>
+        <div class="kanban-count">1</div>
+        <div class="kanban-sub">R$3.500/mês</div>
+      </div>
+      <div class="deal-card urgent">
+        <div class="dc-flag urgent">URGENTE</div>
+        <div class="dc-company">Apolo</div>
+        <div class="dc-amount">R$3.500<span style="font-size:12px;font-weight:400;color:var(--text-muted)">/mês</span></div>
+        <div class="dc-meta">Fecha: 15/05/2026</div>
+        <div class="dc-prob-bar"><div class="dc-prob-fill" style="width:30%;background:#1a4fa0"></div></div>
+        <div class="dc-prob-label">30% probabilidade</div>
+        <div class="dc-action"><strong>⚡</strong> Preparar e enviar proposta urgente — fecha em 3 dias</div>
+        <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/60177527837" target="_blank">Ver no HubSpot →</a>
+      </div>
+    </div><div class="kanban-col col-3">
+      <div class="kanban-header">
+        <div class="kanban-stage">Envio Proposta</div>
+        <div class="kanban-count">2</div>
+        <div class="kanban-sub">R$7.000/mês</div>
+      </div>
+      <div class="deal-card ">
+        <div class="dc-flag normal">EM ABERTO</div>
+        <div class="dc-company">SuperLigas</div>
+        <div class="dc-amount">R$3.500<span style="font-size:12px;font-weight:400;color:var(--text-muted)">/mês</span></div>
+        <div class="dc-meta">Fecha: 31/05/2026</div>
+        <div class="dc-prob-bar"><div class="dc-prob-fill" style="width:50%;background:#16a34a"></div></div>
+        <div class="dc-prob-label">50% probabilidade</div>
+        <div class="dc-action"><strong>⚡</strong> Follow-up: verificar dúvidas sobre a proposta e avançar</div>
+        <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/60108238120" target="_blank">Ver no HubSpot →</a>
+      </div><div class="deal-card ">
+        <div class="dc-flag normal">EM ABERTO</div>
+        <div class="dc-company">Ibéria Embalagens</div>
+        <div class="dc-amount">R$3.500<span style="font-size:12px;font-weight:400;color:var(--text-muted)">/mês</span></div>
+        <div class="dc-meta">Fecha: 31/05/2026</div>
+        <div class="dc-prob-bar"><div class="dc-prob-fill" style="width:50%;background:#16a34a"></div></div>
+        <div class="dc-prob-label">50% probabilidade</div>
+        <div class="dc-action"><strong>⚡</strong> Confirmar recebimento + agendar call de alinhamento</div>
+        <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/60108237889" target="_blank">Ver no HubSpot →</a>
+      </div>
+    </div><div class="kanban-col col-4">
+      <div class="kanban-header">
+        <div class="kanban-stage">Solicitou Contrato</div>
+        <div class="kanban-count">0</div>
+        <div class="kanban-sub">sem deals</div>
+      </div>
+      <div class="kanban-empty">Nenhum deal aqui</div>
+    </div><div class="kanban-col col-5">
+      <div class="kanban-header">
+        <div class="kanban-stage">Negociação</div>
+        <div class="kanban-count">1</div>
+        <div class="kanban-sub">R$3.500/mês</div>
+      </div>
+      <div class="deal-card urgent">
+        <div class="dc-flag urgent">URGENTE</div>
+        <div class="dc-company">Nova Dublagem</div>
+        <div class="dc-amount">R$3.500<span style="font-size:12px;font-weight:400;color:var(--text-muted)">/mês</span></div>
+        <div class="dc-meta">Fecha: 15/05/2026</div>
+        <div class="dc-prob-bar"><div class="dc-prob-fill" style="width:90%;background:#dc2626"></div></div>
+        <div class="dc-prob-label">90% probabilidade</div>
+        <div class="dc-action"><strong>⚡</strong> Enviar contrato e confirmar data de assinatura — HOJE</div>
+        <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/60142186256" target="_blank">Ver no HubSpot →</a>
+      </div>
+    </div><div class="kanban-col col-6">
+      <div class="kanban-header">
+        <div class="kanban-stage">Ganho</div>
+        <div class="kanban-count">24</div>
+        <div class="kanban-sub">clientes ativos</div>
+      </div>
+      <div class="deal-card"><div class="dc-company" style="color:var(--green)">✅ Tifilorm</div><div class="dc-amount" style="color:var(--green)">R$1.500/mês</div><div class="dc-meta">Mar/2025</div></div><div class="deal-card"><div class="dc-company" style="color:var(--green)">✅ GH Group</div><div class="dc-amount" style="color:var(--green)">R$2.500/mês</div><div class="dc-meta">Mai/2024</div></div><div class="deal-card"><div class="dc-company" style="color:var(--green)">✅ MSP</div><div class="dc-amount" style="color:var(--green)">R$5.600/mês</div><div class="dc-meta">Mai/2024</div></div><div style="text-align:center;font-size:11px;color:var(--text-muted);padding:8px">+ 21 outros clientes</div>
+    </div></div>
+
+  <div class="g2" style="margin-top:20px">
+    <div class="card">
+      <div class="card-head"><span class="card-title">Probabilidade de Fechamento</span></div>
+      <div class="card-body"><div class="chart-box short"><canvas id="cProb"></canvas></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="card-title">Valor Ponderado por Deal</span></div>
+      <div class="card-body"><div class="chart-box short"><canvas id="cWeighted"></canvas></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TAB: INSIGHTS ══════════════ -->
+<div id="tab-insights" class="tab">
+  <div class="sec-header">
+    <div><div class="sec-title">🧠 Análise de Prioridades — Solver Energia</div><div class="sec-sub">Sugestões estratégicas baseadas no pipeline atual</div></div>
+  </div>
+
+  <div class="insights-grid">
+    <div class="insight-card priority">
+      <div class="insight-tag">🚨 Prioridade Máxima</div>
+      <div class="insight-title">Dois deals fecham em 3 dias</div>
+      <div class="insight-body">Nova Dublagem (90% prob.) e Apolo (30% prob.) fecham em 15/05. Juntos representam R$7.000/mês = R$84.000/ano. Nova Dublagem está praticamente fechada — só precisa do contrato assinado. Apolo ainda precisa receber a proposta.</div>
+      <div class="insight-action">⚡ Hoje: enviar contrato Nova Dublagem + proposta Apolo</div>
+    </div>
+    <div class="insight-card opportunity">
+      <div class="insight-tag">💚 Oportunidade</div>
+      <div class="insight-title">Tradener/RJ: janela de 30 dias</div>
+      <div class="insight-body">Clientes da Tradener e outras comercializadoras em Recuperação Judicial estão sem gestora. ~38 prospects identificados. Momento de dor máximo = melhor receptividade da trilha inteira. Ciclo de decisão ~30 dias.</div>
+      <div class="insight-action">→ Abordagem direta esta semana com diagnóstico gratuito</div>
+    </div>
+    <div class="insight-card risk">
+      <div class="insight-tag">⚠ Risco</div>
+      <div class="insight-title">Pipeline concentrado em R$3.500</div>
+      <div class="insight-body">Todos os 4 deals ativos têm o mesmo ticket de R$3.500/mês. Falta diversificação: deals maiores (como MSP R$5.600 e Bom Peixe R$5.400 historicamente) aumentam a estabilidade da carteira. Considerar prospectar empresas de maior consumo.</div>
+      <div class="insight-action">→ Identificar prospects com consumo acima de 1MW para tickets R$5k+</div>
+    </div>
+    <div class="insight-card strategy">
+      <div class="insight-tag">🔵 Estratégia</div>
+      <div class="insight-title">563 prospects — 99% ainda na base</div>
+      <div class="insight-body">Com taxa de conversão de ~24%, o potencial de receita adicional da base atual é de aproximadamente R$1,6 milhão/mês. A chave está em segmentar: quais dos 563 têm contrato vencendo nos próximos 90 dias? Esses são os prioritários para Auditoria.</div>
+      <div class="insight-action">→ Filtrar no HubSpot: contatos com tarefa de "vencimento de contrato" em 2026</div>
+    </div>
+    <div class="insight-card opportunity" style="grid-column:1/-1">
+      <div class="insight-tag">📈 Potencial de Receita</div>
+      <div class="insight-title">Se fechar os 4 deals desta semana: +R$168.000/ano</div>
+      <div class="insight-body">Nova Dublagem (R$3.500) + Apolo (R$3.500) + SuperLigas (R$3.500) + Ibéria Embalagens (R$3.500) = <strong>R$14.000/mês</strong>. Anualizado: <strong>R$168.000/ano</strong> somados aos clientes existentes. Com as 2 propostas adicionais que Bruno mencionou, esse número pode chegar a R$196.000/ano só com este mês.</div>
+      <div class="insight-action">→ Meta da semana: pelo menos 2 contratos assinados (Nova Dublagem + Apolo)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="card-title">📊 Saúde do Pipeline — Radar</span></div>
+    <div class="card-body"><div class="chart-box"><canvas id="cRadar"></canvas></div></div>
+  </div>
+</div>
+
+<!-- ══════════════ TAB: PROSPECTOS ══════════════ -->
+<div id="tab-contacts" class="tab">
+  <div class="tbl-ctrl">
+    <input type="text" class="tbl-search" id="searchBox" placeholder="Buscar empresa ou contato..." oninput="filterTbl()">
+    <select class="tbl-sel" id="selTrack" onchange="filterTbl()">
+      <option value="">Todas as trilhas</option>
+      <option value="apresentacao">Apresentação</option>
+      <option value="auditoria">Auditoria / Curto Prazo</option>
+      <option value="tradener">Tradener / RJ</option>
+    </select>
+    <select class="tbl-sel" id="selStatus" onchange="filterTbl()">
+      <option value="">Todos os status</option>
+      <option value="IN_PROGRESS">IN_PROGRESS</option>
+      <option value="CONNECTED">CONNECTED</option>
+      <option value="BAD_TIMING">BAD_TIMING</option>
+      <option value="UNQUALIFIED">UNQUALIFIED</option>
+    </select>
+    <select class="tbl-sel" id="selAge" onchange="filterTbl()">
+      <option value="">Qualquer período</option>
+      <option value="recent">Recente (&lt;30 dias)</option>
+      <option value="medium">30–180 dias</option>
+      <option value="old">&gt;180 dias sem contato</option>
+    </select>
+    <button class="tbl-btn" onclick="exportCSV()">⬇ CSV</button>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th onclick="sortTbl(&#39;company&#39;)">Empresa ↕</th>
+        <th onclick="sortTbl(&#39;contact&#39;)">Contato ↕</th>
+        <th>Cargo</th>
+        <th onclick="sortTbl(&#39;track&#39;)">Trilha ↕</th>
+        <th onclick="sortTbl(&#39;status&#39;)">Status ↕</th>
+        <th onclick="sortTbl(&#39;lastActivity&#39;)">Última Atividade ↕</th>
+        <th>HubSpot</th>
+      </tr></thead>
+      <tbody id="tblBody"></tbody>
+    </table>
+    <div class="pager">
+      <span class="pager-info" id="pagerInfo">–</span>
+      <div class="pager-btns">
+        <button class="pg-btn" id="btnPrev" onclick="chPg(-1)">← Ant.</button>
+        <div id="pgNums" style="display:flex;gap:3px"></div>
+        <button class="pg-btn" id="btnNext" onclick="chPg(1)">Próx. →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TAB: FUNIL ══════════════ -->
+<div id="tab-funnel" class="tab">
+  <div class="alert info" style="margin-bottom:20px">
+    <div class="alert-icon">🎯</div>
+    <div><div class="alert-title">3 Trilhas de Prospecção — Estratégia Solver Energia</div><div class="alert-desc">Cada trilha tem entrada, abordagem e gatilho de conversão específicos. A conversão acontece quando a empresa enxerga a Solver como parceira estratégica.</div></div>
+  </div>
+  <div class="tracks-grid" id="tracksGrid">
+    <div class="track-card">
+      <div class="track-head a"><div class="track-icon">🏭</div><div><div class="track-name">Apresentação</div><div class="track-sub">Mercado Cativo → Livre · ~380 prospects</div></div></div>
+      <div class="track-stages"><div class="track-stage"><div class="ts-num">1</div><div><div class="ts-name">Abordagem inicial</div><div class="ts-sub">LinkedIn / e-mail</div></div><span class="ts-badge live">~380</span></div><div class="track-stage"><div class="ts-num">2</div><div><div class="ts-name">Agendou reunião</div><div class="ts-sub">Demonstrou interesse</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">3</div><div><div class="ts-name">Envio de proposta</div><div class="ts-sub">Diagnóstico realizado</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">4</div><div><div class="ts-name">Solicitou contrato</div><div class="ts-sub">Proposta aceita</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">5</div><div><div class="ts-name">Chamou p/ negociação</div><div class="ts-sub">Revisão de termos</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">6</div><div><div class="ts-name">✅ Negócio Ganho</div><div class="ts-sub">Contrato assinado</div></div><span class="ts-badge live">24 hist.</span></div></div>
+      <div style="padding:10px 14px;background:var(--bg);border-top:1px solid var(--border);font-size:11px;color:var(--text-muted)"><strong>Critério:</strong> Consumo ≥ 500kW/mês, não migrada ao Mercado Livre.</div>
+    </div>
+    <div class="track-card">
+      <div class="track-head b"><div class="track-icon">⚡</div><div><div class="track-name">Auditoria / Curto Prazo</div><div class="track-sub">Já no Mercado Livre · ~145 prospects</div></div></div>
+      <div class="track-stages"><div class="track-stage"><div class="ts-num">1</div><div><div class="ts-name">Nurture Mensal</div><div class="ts-sub">E-mail benchmark enviado</div></div><span class="ts-badge live">Lista ativa</span></div><div class="track-stage"><div class="ts-num">2</div><div><div class="ts-name">Abordagem ativa</div><div class="ts-sub">Diferença &gt;15% detectada</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">3</div><div><div class="ts-name">Diagnóstico</div><div class="ts-sub">Análise da conta</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">4</div><div><div class="ts-name">Envio de proposta</div><div class="ts-sub">Auditoria + gestão</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">5</div><div><div class="ts-name">Negociação</div><div class="ts-sub">Ajuste de escopo</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">6</div><div><div class="ts-name">✅ Negócio Ganho</div><div class="ts-sub">Contrato assinado</div></div><span class="ts-badge idle">–</span></div></div>
+      <div style="padding:10px 14px;background:var(--bg);border-top:1px solid var(--border);font-size:11px;color:var(--text-muted)"><strong>Critério:</strong> Contrato vencendo em &lt;6 meses ou preço acima do benchmark.</div>
+    </div>
+    <div class="track-card">
+      <div class="track-head c"><div class="track-icon">🔥</div><div><div class="track-name">Tradener / RJ</div><div class="track-sub">Comercializadoras em crise · ~38 prospects</div></div></div>
+      <div class="track-stages"><div class="track-stage"><div class="ts-num">1</div><div><div class="ts-name">Identificação</div><div class="ts-sub">Empresa via lista RJ</div></div><span class="ts-badge live">Ativo</span></div><div class="track-stage"><div class="ts-num">2</div><div><div class="ts-name">Abordagem direta</div><div class="ts-sub">Ligação / e-mail urgência</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">3</div><div><div class="ts-name">Diagnóstico gratuito</div><div class="ts-sub">Análise do contrato</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">4</div><div><div class="ts-name">Proposta de transição</div><div class="ts-sub">Nova gestão + comercializ.</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">5</div><div><div class="ts-name">Negociação expressa</div><div class="ts-sub">Urgência = ciclo rápido</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">6</div><div><div class="ts-name">✅ Negócio Ganho</div><div class="ts-sub">Início de gestão</div></div><span class="ts-badge idle">–</span></div></div>
+      <div style="padding:10px 14px;background:var(--bg);border-top:1px solid var(--border);font-size:11px;color:var(--text-muted)"><strong>Critério:</strong> Cliente Tradener / IBS / Electra / Gamma confirmado. Ciclo ~30 dias.</div>
+    </div></div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-head"><span class="card-title">Conversão por Trilha (estimada)</span></div>
+      <div class="card-body"><div class="chart-box short"><canvas id="cTrackConv"></canvas></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="card-title">Ciclo Médio de Vendas</span></div>
+      <div class="card-body"><div class="chart-box short"><canvas id="cCycle"></canvas></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ TAB: HISTÓRICO ══════════════ -->
+<div id="tab-history" class="tab">
+  <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr)">
+    <div class="kpi-card c-blue"><div class="kpi-glow"></div><div class="kpi-label">Total de deals</div><div class="kpi-value">99</div><div class="kpi-sub">Desde 2018</div></div>
+    <div class="kpi-card c-green"><div class="kpi-glow"></div><div class="kpi-label">Clientes ganhos</div><div class="kpi-value">24</div><div class="kpi-sub">Taxa ~24%</div></div>
+    <div class="kpi-card c-teal"><div class="kpi-glow"></div><div class="kpi-label">Receita conquistada</div><div class="kpi-value">R$59,5k</div><div class="kpi-sub">Gestão de energia · /mês acum.</div></div>
+    <div class="kpi-card c-orange"><div class="kpi-glow"></div><div class="kpi-label">Ticket médio ganho</div><div class="kpi-value">R$2,6k</div><div class="kpi-sub">Por cliente · mensal</div></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-head"><span class="card-title">Ganhos vs. Perdidos por Ano</span></div>
+      <div class="card-body"><div class="chart-box"><canvas id="cWL"></canvas></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="card-title">Distribuição de Tickets (ganhos)</span></div>
+      <div class="card-body"><div class="chart-box"><canvas id="cTk"></canvas></div></div>
+    </div>
+  </div>
+  <div class="card won-table">
+    <div class="card-head"><span class="card-title">🏆 Todos os Clientes Conquistados</span><span class="sec-badge">24 clientes</span></div>
+    <div class="tbl-wrap" style="border:none">
+      <table><thead><tr><th>Empresa</th><th>Ticket/mês</th><th>Data</th><th>Receita Anual Est.</th><th>HubSpot</th></tr></thead>
+      <tbody id="wonTbody"></tbody></table>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<div class="footer">
+  Dashboard gerado automaticamente · <strong>Solver Energia</strong> · Dados: HubSpot CRM · Atualizado em <span id="footerDate">12/05/2026 07:00</span><br>
+  <a href="https://app.hubspot.com/contacts/5123746/deals" target="_blank" style="color:var(--blue)">Ver pipeline completo no HubSpot →</a>
+</div>
+
+<script>
+// ══════════════════════════════════════
+// DADOS EMBARCADOS (gerado em 12/05/2026)
+// ══════════════════════════════════════
+const DATA = {
+  updatedAt: '12/05/2026 07:00',
+  activeDeals: [
+    { id:'60142186256', company:'Nova Dublagem', stage:'contractsent', stageLabel:'Chamou p/ negociação', amount:3500, closeDate:'2026-05-15', prob:0.90, daysLeft:3, action:'Enviar contrato e confirmar data de assinatura — HOJE' },
+    { id:'60177527837', company:'Apolo', stage:'qualifiedtobuy', stageLabel:'Agendou reunião', amount:3500, closeDate:'2026-05-15', prob:0.30, daysLeft:3, action:'Preparar e enviar proposta urgente — fecha em 3 dias' },
+    { id:'60108238120', company:'SuperLigas', stage:'presentationscheduled', stageLabel:'Envio de proposta', amount:3500, closeDate:'2026-05-31', prob:0.50, daysLeft:19, action:'Follow-up: verificar dúvidas sobre a proposta e avançar' },
+    { id:'60108237889', company:'Ibéria Embalagens', stage:'presentationscheduled', stageLabel:'Envio de proposta', amount:3500, closeDate:'2026-05-31', prob:0.50, daysLeft:19, action:'Confirmar recebimento + agendar call de alinhamento' },
+  ],
+  stageOrder:['appointmentscheduled','qualifiedtobuy','presentationscheduled','decisionmakerboughtin','contractsent','closedwon'],
+  stageNames:['Abordagem','Agendou Reunião','Envio Proposta','Solicitou Contrato','Negociação','Ganho'],
+  wonDeals:[
+    {id:'35264848937',company:'Tifilorm',amount:1500,date:'Mar/2025'},
+    {id:'19592518748',company:'GH Group',amount:2500,date:'Mai/2024'},
+    {id:'19380858454',company:'MSP',amount:5600,date:'Mai/2024'},
+    {id:'18247675019',company:'Multivisão',amount:2000,date:'Mar/2024'},
+    {id:'18247002211',company:'GHGroup (renovação)',amount:3200,date:'Mar/2024'},
+    {id:'15135215375',company:'Mazurky Embalagens',amount:2500,date:'Dez/2023'},
+    {id:'14417645438',company:'Plastek do Brasil',amount:30000,date:'Ago/2023'},
+    {id:'13505208971',company:"Karam's Mar",amount:1800,date:'Mai/2024'},
+    {id:'12793725489',company:'Cellera Farma',amount:2500,date:'Mar/2023'},
+    {id:'12150845544',company:'Horizon',amount:3500,date:'Fev/2023'},
+    {id:'12087280739',company:'Salgados Neves',amount:1500,date:'Fev/2023'},
+    {id:'5735712001',company:'Bom Peixe',amount:5400,date:'Jan/2023'},
+    {id:'3059950406',company:'Pecval Indústria',amount:2500,date:'Out/2020'},
+    {id:'2862566691',company:'Tinturaria Cruzeiro do Sul',amount:2000,date:'Ago/2020'},
+    {id:'1471394871',company:'Lahuman Telas Plásticas',amount:2000,date:'Jan/2023'},
+    {id:'1471393484',company:'Itu Marmores',amount:2000,date:'Jan/2023'},
+    {id:'1299077398',company:'Refratários Paulista',amount:2000,date:'Mai/2024'},
+    {id:'843375814',company:'Marco Polo Textil',amount:2000,date:'Fev/2019'},
+    {id:'758581507',company:'Ametek',amount:2500,date:'Mai/2019'},
+    {id:'758592970',company:'ADV Farma',amount:2500,date:'Mai/2019'},
+    {id:'758592836',company:'Metalúrgica Rigitec',amount:4000,date:'Dez/2021'},
+    {id:'668660639',company:'Alltape',amount:2000,date:'Abr/2019'},
+    {id:'442578593',company:'Bom Sabor',amount:2000,date:'Jan/2019'},
+    {id:'421907539',company:'Vedax',amount:2000,date:'Set/2018'},
+  ],
+  contacts:[
+    {id:'2001',company:'Rede São Vicente',contact:'Thiago Pietrobon',role:'Gestor Meio Ambiente',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-04'},
+    {id:'1472',company:'Dynamic Air',contact:'Claudio Luiz Ferreira',role:'Ger. Automação',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-04'},
+    {id:'1165',company:'Romi',contact:'Lucas Mutti',role:'Chefe Eng. Industrial',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-04'},
+    {id:'211027663796',company:'Jacar Pneus',contact:'Victor de Lima',role:'Engenheiro',track:'auditoria',status:'BAD_TIMING',lastActivity:'2026-05-09'},
+    {id:'211027655337',company:'Jacar Pneus',contact:'Carlos Teixeira Marques',role:'Diretor',track:'auditoria',status:'BAD_TIMING',lastActivity:'2026-05-09'},
+    {id:'215557491869',company:'Suominen',contact:'Cynthia Santanna',role:'Esp. Sênior Compras',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'215597238878',company:'Kanjiko',contact:'Pedro Euzebio Bonassi Diniz',role:'Analista Compras',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'195569362728',company:'Ibrame',contact:'Flavio Varella Bruna',role:'CFO',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'197523500644',company:'Manfrim - Special Dog',contact:'Marcos Tavares',role:'Ger. Vendas',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'206429157718',company:'LuBrasil',contact:'Wesley Costa',role:'Eng. Eletricista',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'191442553415',company:'Bomix Embalagens',contact:'Jack Wicks',role:'Diretor',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'191439202725',company:'Ondunorte',contact:'Sergio Pontes',role:'Sócio',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'179441508236',company:'Grupo Isa Alumínio',contact:'Cazuo Takamori',role:'Compras - Energia',track:'auditoria',status:'BAD_TIMING',lastActivity:'2026-05-09'},
+    {id:'176073492837',company:'Arfrio',contact:'Jamil Elias',role:'Dir. Financeiro',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'176073100965',company:'Linoforte',contact:'Mauricio D. Pinto',role:'Diretor',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'175820667774',company:'Buntech',contact:'Vivian Correa',role:'Compras',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'175820734365',company:'Blanver',contact:'Sérgio Frangioni',role:'Diretor',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'179749644934',company:'Alucomaxx',contact:'Carlos Carvalho',role:'Dir. Financeiro',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'176073250212',company:'Martin Sprocket & Gear',contact:'Alexandre Couto',role:'Comprador Pleno',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'176434672673',company:'Grupo JLJ',contact:'Jorge Viana',role:'Ger. Financeiro',track:'tradener',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'175820667214',company:'Copasil',contact:'Marcio Penteado',role:'Ger. Manutenção',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'175820671160',company:'Glasstech',contact:'Marcio Scaranello',role:'Ger. Compras',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'190497428143',company:'Advance Tintas',contact:'Lucas Padilha Nunes',role:'Diretor Geral',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'183345037161',company:'Arfrio',contact:'Felipe P. Gonçalves',role:'Gest. Eng. Manutenção',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2026-05-09'},
+    {id:'1412',company:'Ardagh Group',contact:'Soraya Seba Vidotto',role:'Assist. Diretoria',track:'tradener',status:'IN_PROGRESS',lastActivity:'2022-06-17'},
+    {id:'1470',company:'Ardagh Group',contact:'Jorge Bannitz',role:'Presidente',track:'tradener',status:'IN_PROGRESS',lastActivity:'2022-12-23'},
+    {id:'4301',company:'Ardagh',contact:'Jessyca Melo',role:'Suprimentos',track:'tradener',status:'IN_PROGRESS',lastActivity:'2022-07-11'},
+    {id:'4001',company:'Gühring',contact:'Alessandro C. Bassetto',role:'Ger. Produção',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2025-09-01'},
+    {id:'1053',company:'Hanon Systems',contact:'Leandro Mendes de Oliveira',role:'Eng. Manutenção',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2024-03-19'},
+    {id:'1951',company:'Hanon Systems',contact:'Andreas Jancso',role:'Diretor',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2022-12-23'},
+    {id:'2404',company:'Hanon Systems',contact:'Luis Carlos Michelin',role:'Ger. Planta',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2024-02-27'},
+    {id:'1903',company:'Sibelco',contact:'Valdir Cardoso',role:'–',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2022-08-05'},
+    {id:'1475',company:'Sibelco',contact:'Zairo Luiz Pereira',role:'Ger. Planta',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2022-12-23'},
+    {id:'4651',company:'Mitsubishi Chemical',contact:'Marcelo Delvaux',role:'Dir. Geral',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2022-04-21'},
+    {id:'22701',company:'Saint-Gobain Weber',contact:'Paulo Henrique Iurilli',role:'Eng. Manutenção Corp.',track:'auditoria',status:'IN_PROGRESS',lastActivity:'2022-07-23'},
+    {id:'1418',company:'Iberfios Fiação',contact:'Luiz Machado',role:'Ger. Comercial',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2023-04-05'},
+    {id:'1473',company:'Rochester',contact:'Alexandre Saad',role:'Sócio',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2022-06-05'},
+    {id:'1455',company:'Blau Farmacêutica',contact:'Geovan Santos',role:'Engenharia',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2022-08-03'},
+    {id:'1465',company:'Glassec Viracon',contact:'Daniel Scarpato',role:'Dir. Industrial',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2024-07-01'},
+    {id:'1801',company:'Bom Sabor',contact:'Gildo de Oliveira',role:'Comprador Sênior',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2024-05-13'},
+  ],
+  totalContacts: 563
+};
+
+// ══════════════════════════════════════
+// TABS
+// ══════════════════════════════════════
+function showTab(name, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('on'));
+  document.getElementById('tab-' + name).classList.add('on');
+  el.classList.add('on');
+  if (name === 'contacts') renderTable();
+  if (name === 'kanban') renderKanbanCharts();
+  if (name === 'funnel') renderFunnelCharts();
+  if (name === 'history') renderHistory();
+}
+
+// ══════════════════════════════════════
+// KPI COUNTER ANIMATION
+// ══════════════════════════════════════
+function animateCounters() {
+  document.querySelectorAll('.kpi-value[data-target]').forEach(el => {
+    const target = +el.dataset.target;
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const duration = 1200;
+    const start = performance.now();
+    function update(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      const cur = Math.round(target * ease);
+      el.textContent = prefix + cur.toLocaleString('pt-BR') + suffix;
+      if (p < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  });
+}
+
+// ══════════════════════════════════════
+// ALERTS
+// ══════════════════════════════════════
+function renderAlerts() {
+  const urgent = DATA.activeDeals.filter(d => d.daysLeft <= 7);
+  let html = '';
+  urgent.forEach(d => {
+    html += `<div class="alert danger"><div class="alert-icon">🚨</div><div><div class="alert-title">${d.company} — Fecha em ${d.daysLeft} dias (${d.closeDate.split('-').reverse().join('/')})</div><div class="alert-desc">Estágio: ${d.stageLabel} · ${d.prob*100}% probabilidade · R$${d.amount.toLocaleString('pt-BR')}/mês · <strong>Ação: ${d.action}</strong></div></div></div>`;
+  });
+  if (!urgent.length) html = `<div class="alert success"><div class="alert-icon">✅</div><div><div class="alert-title">Pipeline saudável — nenhum negócio com prazo crítico</div><div class="alert-desc">${DATA.activeDeals.length} negócio(s) ativo(s) em andamento.</div></div></div>`;
+  document.getElementById('alertsArea').innerHTML = html;
+}
+
+// ══════════════════════════════════════
+// OVERVIEW CHARTS
+// ══════════════════════════════════════
+function renderOverviewCharts() {
+  // Stages
+  const stageCounts = DATA.stageOrder.map(s => DATA.activeDeals.filter(d => d.stage === s).length);
+  stageCounts[5] = DATA.wonDeals.length;
+  const gradColors = ['rgba(26,79,160,.7)','rgba(124,58,237,.7)','rgba(234,88,12,.7)','rgba(217,119,6,.7)','rgba(220,38,38,.9)','rgba(22,163,74,.9)'];
+  new Chart(document.getElementById('cStages'), {
+    type: 'bar',
+    data: { labels: DATA.stageNames, datasets: [{ data: stageCounts, backgroundColor: gradColors, borderRadius: 8, borderSkipped: false }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { stepSize: 1 }, grid: { color: 'rgba(0,0,0,.05)' } }, x: { grid: { display: false } } }, animation: { duration: 1000, easing: 'easeOutQuart' } }
+  });
+
+  // Tracks donut
+  new Chart(document.getElementById('cTracks'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Apresentação (~67%)', 'Auditoria / CP (~26%)', 'Tradener / RJ (~7%)'],
+      datasets: [{ data: [380, 145, 38], backgroundColor: ['#1a4fa0','#00897b','#e65100'], borderWidth: 4, borderColor: '#ffffff', hoverOffset: 8 }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, cutout: '68%', plugins: { legend: { position: 'bottom', labels: { padding: 16, font: { size: 12 } } } }, animation: { animateRotate: true, duration: 1200 } }
+  });
+}
+
+// ══════════════════════════════════════
+// KANBAN BOARD
+// ══════════════════════════════════════
+function renderKanban() {
+  const colData = DATA.stageOrder.map((s, i) => ({
+    stage: s,
+    label: DATA.stageNames[i],
+    deals: DATA.activeDeals.filter(d => d.stage === s),
+    wonCount: i === 5 ? DATA.wonDeals.length : null
+  }));
+
+  const board = document.getElementById('kanbanBoard');
+  board.innerHTML = colData.map((col, i) => {
+    const totalAmt = col.deals.reduce((sum, d) => sum + d.amount, 0);
+    const cardsHtml = col.deals.map(d => {
+      const cls = d.daysLeft <= 4 ? 'urgent' : d.daysLeft <= 14 ? 'warm' : '';
+      const flagTxt = d.daysLeft <= 4 ? 'URGENTE' : d.daysLeft <= 14 ? d.daysLeft + ' DIAS' : 'EM ABERTO';
+      const flagCls = d.daysLeft <= 4 ? 'urgent' : d.daysLeft <= 14 ? 'warm' : 'normal';
+      const probColor = d.prob >= 0.8 ? '#dc2626' : d.prob >= 0.5 ? '#16a34a' : '#1a4fa0';
+      return `<div class="deal-card ${cls}">
+        <div class="dc-flag ${flagCls}">${flagTxt}</div>
+        <div class="dc-company">${d.company}</div>
+        <div class="dc-amount">R$${d.amount.toLocaleString('pt-BR')}<span style="font-size:12px;font-weight:400;color:var(--text-muted)">/mês</span></div>
+        <div class="dc-meta">Fecha: ${d.closeDate.split('-').reverse().join('/')}</div>
+        <div class="dc-prob-bar"><div class="dc-prob-fill" style="width:${d.prob*100}%;background:${probColor}"></div></div>
+        <div class="dc-prob-label">${d.prob*100}% probabilidade</div>
+        <div class="dc-action"><strong>⚡</strong> ${d.action}</div>
+        <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/${d.id}" target="_blank">Ver no HubSpot →</a>
+      </div>`;
+    }).join('');
+
+    const emptyHtml = col.deals.length === 0 && i < 5 ? '<div class="kanban-empty">Nenhum deal aqui</div>' : '';
+    const wonHtml = i === 5 ? DATA.wonDeals.slice(0, 3).map(w => `<div class="deal-card"><div class="dc-company" style="color:var(--green)">✅ ${w.company}</div><div class="dc-amount" style="color:var(--green)">R$${w.amount.toLocaleString('pt-BR')}/mês</div><div class="dc-meta">${w.date}</div></div>`).join('') + `<div style="text-align:center;font-size:11px;color:var(--text-muted);padding:8px">+ ${DATA.wonDeals.length - 3} outros clientes</div>` : '';
+
+    return `<div class="kanban-col col-${i+1}">
+      <div class="kanban-header">
+        <div class="kanban-stage">${col.label}</div>
+        <div class="kanban-count">${i === 5 ? DATA.wonDeals.length : col.deals.length}</div>
+        <div class="kanban-sub">${i === 5 ? 'clientes ativos' : totalAmt > 0 ? 'R$' + totalAmt.toLocaleString('pt-BR') + '/mês' : 'sem deals'}</div>
+      </div>
+      ${cardsHtml}${emptyHtml}${wonHtml}
+    </div>`;
+  }).join('');
+}
+
+let kanbanChartsOk = false;
+function renderKanbanCharts() {
+  if (kanbanChartsOk) return;
+  kanbanChartsOk = true;
+
+  new Chart(document.getElementById('cProb'), {
+    type: 'bar',
+    data: { labels: DATA.activeDeals.map(d => d.company), datasets: [{ label: 'Probabilidade %', data: DATA.activeDeals.map(d => d.prob * 100), backgroundColor: DATA.activeDeals.map(d => d.prob >= .8 ? '#dc2626' : d.prob >= .5 ? '#16a34a' : '#1a4fa0'), borderRadius: 8 }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 100, grid: { color: 'rgba(0,0,0,.05)' }, ticks: { callback: v => v + '%' } }, x: { grid: { display: false } } } }
+  });
+
+  new Chart(document.getElementById('cWeighted'), {
+    type: 'bar',
+    data: { labels: DATA.activeDeals.map(d => d.company), datasets: [{ label: 'Valor esperado', data: DATA.activeDeals.map(d => Math.round(d.amount * d.prob)), backgroundColor: '#4EAFD4', borderRadius: 8 }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,.05)' }, ticks: { callback: v => 'R$' + v } }, x: { grid: { display: false } } } }
+  });
+}
+
+// ══════════════════════════════════════
+// AI INSIGHTS RADAR
+// ══════════════════════════════════════
+let insightChartsOk = {};
+function renderInsightsChart() {
+  if (insightChartsOk.radar) return;
+  insightChartsOk.radar = true;
+  new Chart(document.getElementById('cRadar'), {
+    type: 'radar',
+    data: {
+      labels: ['Pipeline Ativo','Taxa Conversão','Urgência de Ação','Diversif. de Trilhas','Cobertura Histórica','Ticket Médio'],
+      datasets: [{
+        label: 'Solver Energia — Maio 2026',
+        data: [55, 65, 30, 70, 75, 55],
+        backgroundColor: 'rgba(26,79,160,.15)',
+        borderColor: '#1a4fa0',
+        borderWidth: 2,
+        pointBackgroundColor: '#1a4fa0',
+        pointRadius: 5
+      },{
+        label: 'Meta ideal',
+        data: [80, 80, 80, 80, 80, 80],
+        backgroundColor: 'rgba(22,163,74,.05)',
+        borderColor: 'rgba(22,163,74,.4)',
+        borderWidth: 2,
+        borderDash: [6, 3],
+        pointRadius: 0
+      }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 100, ticks: { stepSize: 20 }, grid: { color: 'rgba(0,0,0,.08)' } } }, plugins: { legend: { position: 'bottom' } } }
+  });
+}
+
+// ══════════════════════════════════════
+// FUNNEL
+// ══════════════════════════════════════
+function renderTracks() {
+  const tracks = [
+    { cls:'a', icon:'🏭', name:'Apresentação', sub:'Mercado Cativo → Livre', count:'~380', stages:[
+      {n:1,name:'Abordagem inicial',sub:'LinkedIn / e-mail',badge:'~380',live:true},{n:2,name:'Agendou reunião',sub:'Demonstrou interesse',badge:'–'},{n:3,name:'Envio de proposta',sub:'Diagnóstico realizado',badge:'–'},{n:4,name:'Solicitou contrato',sub:'Proposta aceita',badge:'–'},{n:5,name:'Chamou p/ negociação',sub:'Revisão de termos',badge:'–'},{n:6,name:'✅ Negócio Ganho',sub:'Contrato assinado',badge:'24 hist.',live:true}
+    ], criteria:'Consumo ≥ 500kW/mês, não migrada ao Mercado Livre.' },
+    { cls:'b', icon:'⚡', name:'Auditoria / Curto Prazo', sub:'Já no Mercado Livre', count:'~145', stages:[
+      {n:1,name:'Nurture Mensal',sub:'E-mail benchmark enviado',badge:'Lista ativa',live:true},{n:2,name:'Abordagem ativa',sub:'Diferença >15% detectada',badge:'–'},{n:3,name:'Diagnóstico',sub:'Análise da conta',badge:'–'},{n:4,name:'Envio de proposta',sub:'Auditoria + gestão',badge:'–'},{n:5,name:'Negociação',sub:'Ajuste de escopo',badge:'–'},{n:6,name:'✅ Negócio Ganho',sub:'Contrato assinado',badge:'–'}
+    ], criteria:'Contrato vencendo em <6 meses ou preço acima do benchmark.' },
+    { cls:'c', icon:'🔥', name:'Tradener / RJ', sub:'Comercializadoras em crise', count:'~38', stages:[
+      {n:1,name:'Identificação',sub:'Empresa via lista RJ',badge:'Ativo',live:true},{n:2,name:'Abordagem direta',sub:'Ligação / e-mail urgência',badge:'–'},{n:3,name:'Diagnóstico gratuito',sub:'Análise do contrato',badge:'–'},{n:4,name:'Proposta de transição',sub:'Nova gestão + comercializ.',badge:'–'},{n:5,name:'Negociação expressa',sub:'Urgência = ciclo rápido',badge:'–'},{n:6,name:'✅ Negócio Ganho',sub:'Início de gestão',badge:'–'}
+    ], criteria:'Cliente Tradener / IBS / Electra / Gamma confirmado. Ciclo ~30 dias.' }
+  ];
+
+  document.getElementById('tracksGrid').innerHTML = tracks.map(t => `
+    <div class="track-card">
+      <div class="track-head ${t.cls}"><div class="track-icon">${t.icon}</div><div><div class="track-name">${t.name}</div><div class="track-sub">${t.sub} · ${t.count} prospects</div></div></div>
+      <div class="track-stages">${t.stages.map(s => `<div class="track-stage"><div class="ts-num">${s.n}</div><div><div class="ts-name">${s.name}</div><div class="ts-sub">${s.sub}</div></div><span class="ts-badge ${s.live?'live':'idle'}">${s.badge}</span></div>`).join('')}</div>
+      <div style="padding:10px 14px;background:var(--bg);border-top:1px solid var(--border);font-size:11px;color:var(--text-muted)"><strong>Critério:</strong> ${t.criteria}</div>
+    </div>`).join('');
+}
+
+let funnelChartsOk = false;
+function renderFunnelCharts() {
+  if (funnelChartsOk) return;
+  funnelChartsOk = true;
+  new Chart(document.getElementById('cTrackConv'), {
+    type: 'bar',
+    data: { labels: ['Apresentação','Auditoria / CP','Tradener / RJ'], datasets: [{ data: [22, 35, 55], backgroundColor: ['#1a4fa0','#00897b','#e65100'], borderRadius: 8 }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' }, grid: { color: 'rgba(0,0,0,.05)' } }, x: { grid: { display: false } } } }
+  });
+  new Chart(document.getElementById('cCycle'), {
+    type: 'bar', indexAxis: 'y',
+    data: { labels: ['Apresentação','Auditoria / CP','Tradener / RJ'], datasets: [{ data: [90, 60, 30], backgroundColor: ['#1a4fa0','#00897b','#e65100'], borderRadius: 6 }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, grid: { color: 'rgba(0,0,0,.05)' }, ticks: { callback: v => v + 'd' } }, y: { grid: { display: false } } } }
+  });
+}
+
+// ══════════════════════════════════════
+// HISTORY
+// ══════════════════════════════════════
+let histOk = false;
+function renderHistory() {
+  if (histOk) return; histOk = true;
+
+  // Won table
+  document.getElementById('wonTbody').innerHTML = DATA.wonDeals.map(d => `<tr><td class="td-co">${d.company}</td><td>R$${d.amount.toLocaleString('pt-BR')}</td><td>${d.date}</td><td>R$${(d.amount*12).toLocaleString('pt-BR')}</td><td class="td-link"><a href="https://app.hubspot.com/contacts/5123746/record/0-3/${d.id}" target="_blank">Ver →</a></td></tr>`).join('');
+
+  // Win/Loss
+  const years = ['2018','2019','2020','2021','2022','2023','2024','2025'];
+  const wonByYear = [2, 6, 4, 1, 0, 6, 5, 2];
+  const lostByYear = [1, 3, 4, 2, 2, 5, 5, 3];
+  new Chart(document.getElementById('cWL'), {
+    type: 'bar',
+    data: { labels: years, datasets: [
+      { label: 'Ganhos ✅', data: wonByYear, backgroundColor: 'rgba(22,163,74,.8)', borderRadius: 5 },
+      { label: 'Perdidos', data: lostByYear, backgroundColor: 'rgba(220,38,38,.35)', borderRadius: 5 }
+    ]},
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { x: { grid: { display: false } }, y: { beginAtZero: true, ticks: { stepSize: 1 }, grid: { color: 'rgba(0,0,0,.05)' } } }, animation: { duration: 1000 } }
+  });
+
+  // Ticket distribution
+  const buckets = [0,0,0,0,0];
+  DATA.wonDeals.forEach(d => {
+    if (d.amount < 2000) buckets[0]++;
+    else if (d.amount < 3000) buckets[1]++;
+    else if (d.amount < 5000) buckets[2]++;
+    else if (d.amount < 10000) buckets[3]++;
+    else buckets[4]++;
+  });
+  new Chart(document.getElementById('cTk'), {
+    type: 'doughnut',
+    data: { labels: ['< R$2k','R$2k–3k','R$3k–5k','R$5k–10k','> R$10k'], datasets: [{ data: buckets, backgroundColor: ['#bfdbfe','#93c5fd','#3b82f6','#1d4ed8','#1e3a8a'], borderWidth: 3, borderColor: '#fff', hoverOffset: 6 }] },
+    options: { responsive: true, maintainAspectRatio: false, cutout: '55%', plugins: { legend: { position: 'bottom', labels: { padding: 12, font: { size: 11 } } } } }
+  });
+}
+
+// ══════════════════════════════════════
+// CONTACTS TABLE
+// ══════════════════════════════════════
+let filteredContacts = [...DATA.contacts];
+let sortColC = 'lastActivity', sortAscC = false;
+let pageC = 1;
+const PG = 15;
+
+function filterTbl() {
+  const s = (document.getElementById('searchBox').value||'').toLowerCase();
+  const t = document.getElementById('selTrack').value;
+  const st = document.getElementById('selStatus').value;
+  const age = document.getElementById('selAge').value;
+  filteredContacts = DATA.contacts.filter(c => {
+    const ms = !s || c.company.toLowerCase().includes(s) || c.contact.toLowerCase().includes(s);
+    const mt = !t || c.track === t;
+    const mst = !st || c.status === st;
+    let ma = true;
+    if (age && c.lastActivity) {
+      const diff = (Date.now() - new Date(c.lastActivity)) / 86400000;
+      if (age === 'recent') ma = diff < 30;
+      else if (age === 'medium') ma = diff >= 30 && diff <= 180;
+      else if (age === 'old') ma = diff > 180;
+    }
+    return ms && mt && mst && ma;
+  });
+  pageC = 1;
+  renderTable();
+}
+
+function sortTbl(col) {
+  if (sortColC === col) sortAscC = !sortAscC;
+  else { sortColC = col; sortAscC = true; }
+  filteredContacts.sort((a, b) => {
+    const va = a[col]||'', vb = b[col]||'';
+    return sortAscC ? va.localeCompare(vb) : vb.localeCompare(va);
+  });
+  renderTable();
+}
+
+const trackLabel = {apresentacao:'Apresentação',auditoria:'Auditoria / CP',tradener:'Tradener / RJ'};
+function renderTable() {
+  const start = (pageC-1)*PG;
+  const slice = filteredContacts.slice(start, start+PG);
+  const tbody = document.getElementById('tblBody');
+  tbody.innerHTML = slice.length === 0
+    ? `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--text-muted)">Nenhum resultado.</td></tr>`
+    : slice.map(c => {
+        const diff = (Date.now() - new Date(c.lastActivity)) / 86400000;
+        const ageCls = diff < 30 ? 'recent' : diff > 180 ? 'old' : '';
+        const d = new Date(c.lastActivity);
+        const dateStr = d.toLocaleDateString('pt-BR', {day:'2-digit',month:'2-digit',year:'2-digit'});
+        return `<tr>
+          <td class="td-co">${c.company}</td>
+          <td>${c.contact}</td>
+          <td class="td-role">${c.role}</td>
+          <td><span class="chip ${c.track}">${trackLabel[c.track]}</span></td>
+          <td><span class="chip ${c.status}">${c.status}</span></td>
+          <td class="td-date ${ageCls}">${dateStr}</td>
+          <td class="td-link"><a href="https://app.hubspot.com/contacts/5123746/record/0-1/${c.id}?utm_source=solver_dashboard" target="_blank">Ver →</a></td>
+        </tr>`;
+      }).join('');
+
+  const total = filteredContacts.length;
+  const totalPgs = Math.max(1, Math.ceil(total/PG));
+  document.getElementById('pagerInfo').textContent = `${Math.min(start+1,total)}–${Math.min(start+PG,total)} de ${total} (de ${DATA.totalContacts} total)`;
+  document.getElementById('btnPrev').disabled = pageC <= 1;
+  document.getElementById('btnNext').disabled = pageC >= totalPgs;
+  const pgNums = document.getElementById('pgNums');
+  pgNums.innerHTML = '';
+  for (let i = Math.max(1, pageC-2); i <= Math.min(totalPgs, pageC+2); i++) {
+    const b = document.createElement('button');
+    b.className = 'pg-btn' + (i===pageC?' on':'');
+    b.textContent = i;
+    b.onclick = () => { pageC = i; renderTable(); };
+    pgNums.appendChild(b);
+  }
+}
+
+function chPg(dir) {
+  const totalPgs = Math.ceil(filteredContacts.length/PG);
+  pageC = Math.max(1, Math.min(totalPgs, pageC+dir));
+  renderTable();
+}
+
+function exportCSV() {
+  const rows = [['Empresa','Contato','Cargo','Trilha','Status','Última Atividade']];
+  filteredContacts.forEach(c => rows.push([c.company, c.contact, c.role, c.track, c.status, c.lastActivity]));
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,﻿' + encodeURIComponent(rows.map(r => r.join(';')).join('\n'));
+  a.download = 'solver_prospectos_' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+}
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+window.addEventListener('load', () => {
+  // Date
+  const now = new Date();
+  const opts = { weekday:'long', day:'2-digit', month:'long', year:'numeric' };
+  const dateStr = now.toLocaleDateString('pt-BR', opts);
+  document.getElementById('dateDisplay').textContent = dateStr;
+  document.getElementById('footerDate').textContent = DATA.updatedAt;
+
+  // Urgent badge
+  const urgentCount = DATA.activeDeals.filter(d => d.daysLeft <= 7).length;
+  document.getElementById('urgentBadge').textContent = urgentCount;
+  if (!urgentCount) document.getElementById('urgentBadge').style.display = 'none';
+
+  // Render
+  renderAlerts();
+  renderKanban();
+  renderTracks();
+  setTimeout(animateCounters, 200);
+  setTimeout(renderOverviewCharts, 300);
+});
+</script>
+
+
+</body></html>
