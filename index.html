@@ -3,7 +3,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Solver Energia — Pipeline de Prospecção</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="./Solver Energia — Pipeline de Prospecção_files/chart.umd.min.js.download"></script>
 <style>
 :root {
   --blue-dark: #0a2d5e;
@@ -348,15 +348,15 @@ td{padding:11px 14px;font-size:13px}
 <!-- ══════════════ TAB: VISÃO GERAL ══════════════ -->
 <div id="tab-overview" class="tab on">
 
-  <div id="alertsArea" style="margin-bottom:20px"><div class="alert danger"><div class="alert-icon">🚨</div><div><div class="alert-title">Nova Dublagem — Fecha em 3 dias (15/05/2026)</div><div class="alert-desc">Estágio: Chamou p/ negociação · 90% probabilidade · R$3.500/mês · <strong>Ação: Enviar contrato e confirmar data de assinatura — HOJE</strong></div></div></div><div class="alert danger"><div class="alert-icon">🚨</div><div><div class="alert-title">Apolo — Fecha em 3 dias (15/05/2026)</div><div class="alert-desc">Estágio: Agendou reunião · 30% probabilidade · R$3.500/mês · <strong>Ação: Preparar e enviar proposta urgente — fecha em 3 dias</strong></div></div></div></div>
+  <div id="alertsArea" style="margin-bottom:20px"><div class="alert" style="border-left-color:#22c55e;background:rgba(34,197,94,0.08)"><div class="alert-icon">✅</div><div><div class="alert-title">Nenhum deal urgente esta semana — pipeline saudável!</div><div class="alert-desc">Nova Dublagem e Ibéria Embalagens viraram clientes 🎉 · Atenção: <strong>Autometal (11 dias)</strong> e <strong>SuperLigas (13 dias)</strong> vencem em breve — mantenha o contato ativo.</div></div></div></div>
 
   <div class="kpi-grid" id="kpiGrid">
-    <div class="kpi-card c-red"><div class="kpi-glow"></div><div class="kpi-label">Urgente — fecha em 3 dias</div><div class="kpi-value" data-target="2" data-prefix="">2</div><div class="kpi-sub">Nova Dublagem + Apolo</div><div class="kpi-trend down">⚠ Ação hoje</div></div>
-    <div class="kpi-card c-blue"><div class="kpi-glow"></div><div class="kpi-label">Prospectos ativos</div><div class="kpi-value" data-target="563" data-prefix="">563</div><div class="kpi-sub">Contatos IN_PROGRESS</div><div class="kpi-trend up">↑ 3 trilhas ativas</div></div>
-    <div class="kpi-card c-teal"><div class="kpi-glow"></div><div class="kpi-label">Pipeline total</div><div class="kpi-value" data-target="14" data-prefix="R$" data-suffix="k">R$14k</div><div class="kpi-sub">4 negócios em aberto · /mês</div><div class="kpi-trend warn">⚡ R$7,7k ponderado</div></div>
+    <div class="kpi-card c-green"><div class="kpi-glow"></div><div class="kpi-label">Urgente — fecha em ≤7 dias</div><div class="kpi-value" data-target="0" data-prefix="">0</div><div class="kpi-sub">Autometal: 11 dias · SuperLigas: 13 dias</div><div class="kpi-trend up">✅ Pipeline saudável</div></div>
+    <div class="kpi-card c-blue"><div class="kpi-glow"></div><div class="kpi-label">Prospectos ativos</div><div class="kpi-value" data-target="582" data-prefix="">582</div><div class="kpi-sub">Contatos IN_PROGRESS</div><div class="kpi-trend up">↑ 3 trilhas ativas</div></div>
+    <div class="kpi-card c-teal"><div class="kpi-glow"></div><div class="kpi-label">Pipeline total</div><div class="kpi-value" data-target="12" data-prefix="R$" data-suffix=",3k">R$12,3k</div><div class="kpi-sub">4 negócios em aberto · /mês</div><div class="kpi-trend warn">⚡ R$5,98k ponderado</div></div>
     <div class="kpi-card c-orange"><div class="kpi-glow"></div><div class="kpi-label">Negócios abertos</div><div class="kpi-value" data-target="4" data-prefix="">4</div><div class="kpi-sub">+ 2 chegando em breve</div></div>
-    <div class="kpi-card c-green"><div class="kpi-glow"></div><div class="kpi-label">Taxa de conversão</div><div class="kpi-value" data-target="24" data-prefix="" data-suffix="%">24%</div><div class="kpi-sub">24 ganhos / 99 deals histórico</div><div class="kpi-trend up">↑ Acima da média B2B</div></div>
-    <div class="kpi-card c-purple"><div class="kpi-glow"></div><div class="kpi-label">Clientes conquistados</div><div class="kpi-value" data-target="24" data-prefix="">24</div><div class="kpi-sub">Desde 2018 · gestão de energia</div><div class="kpi-trend up">↑ Base sólida</div></div>
+    <div class="kpi-card c-green"><div class="kpi-glow"></div><div class="kpi-label">Taxa de conversão</div><div class="kpi-value" data-target="25" data-prefix="" data-suffix="%">25%</div><div class="kpi-sub">26 ganhos / 102 deals histórico</div><div class="kpi-trend up">↑ Acima da média B2B</div></div>
+    <div class="kpi-card c-purple"><div class="kpi-glow"></div><div class="kpi-label">Clientes conquistados</div><div class="kpi-value" data-target="26" data-prefix="">26</div><div class="kpi-sub">Desde 2018 · gestão de energia</div><div class="kpi-trend up">↑ Base sólida</div></div>
   </div>
 
   <div class="g2">
@@ -365,7 +365,7 @@ td{padding:11px 14px;font-size:13px}
       <div class="card-body"><div class="chart-box"><canvas id="cStages" width="566" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 566px;"></canvas></div></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="card-title">Distribuição por Trilha</span><span class="sec-badge">563 prospectos</span></div>
+      <div class="card-head"><span class="card-title">Distribuição por Trilha</span><span class="sec-badge">582 prospectos</span></div>
       <div class="card-body"><div class="chart-box"><canvas id="cTracks" width="566" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 566px;"></canvas></div></div>
     </div>
   </div>
@@ -374,9 +374,9 @@ td{padding:11px 14px;font-size:13px}
     <div class="card-head"><span class="card-title">🎯 Plano de Ação da Semana</span></div>
     <div class="card-body">
       <ul class="timeline">
-        <li class="tl-item"><div class="tl-dot r">🚨</div><div class="tl-content"><div class="tl-title">Nova Dublagem — Fechar contrato (fecha 15/05 · 3 dias)</div><div class="tl-when">HOJE — Probabilidade 90% · R$3.500/mês</div><div class="tl-note">Enviar contrato para assinatura. Confirmar data de início de gestão. Este é o negócio mais adiantado — não deixar esfriar.</div></div></li>
-        <li class="tl-item"><div class="tl-dot r">⚡</div><div class="tl-content"><div class="tl-title">Apolo — Enviar proposta urgente (fecha 15/05 · 3 dias)</div><div class="tl-when">HOJE ou amanhã — Probabilidade 30% · R$3.500/mês</div><div class="tl-note">Reunião já aconteceu. Proposta precisa sair hoje para ter tempo de negociação antes do prazo.</div></div></li>
-        <li class="tl-item"><div class="tl-dot o">📄</div><div class="tl-content"><div class="tl-title">SuperLigas + Ibéria Embalagens — Follow-up de proposta</div><div class="tl-when">Até quarta-feira — Prob. 50% cada · R$3.500/mês</div><div class="tl-note">Ambas receberam proposta. Ligar para verificar dúvidas e acelerar decisão. Fecham em 19 dias.</div></div></li>
+        <li class="tl-item"><div class="tl-dot g">🎉</div><div class="tl-content"><div class="tl-title">Nova Dublagem + Ibéria Embalagens — FECHADOS! Bem-vindos clientes!</div><div class="tl-when">Concluído esta semana — +R$5.800/mês adicionados à carteira</div><div class="tl-note">Nova Dublagem (R$2.300) e Ibéria Embalagens (R$3.500) viraram clientes. Confirmar início de gestão e onboarding com cada um.</div></div></li>
+        <li class="tl-item"><div class="tl-dot o">⚡</div><div class="tl-content"><div class="tl-title">Autometal S.A. — Confirmar reunião (fecha 29/05 · 11 dias)</div><div class="tl-when">Esta semana — Probabilidade 40% · R$3.500/mês</div><div class="tl-note">Reunião agendada. Preparar proposta personalizada e confirmar pauta. Prazo se aproximando — não deixar esfriar.</div></div></li>
+        <li class="tl-item"><div class="tl-dot o">📄</div><div class="tl-content"><div class="tl-title">SuperLigas — Follow-up urgente de proposta (fecha 31/05 · 13 dias)</div><div class="tl-when">Até quinta-feira — Probabilidade 60% · R$3.500/mês</div><div class="tl-note">Proposta enviada. Ligar para verificar dúvidas, objeções e acelerar decisão antes do prazo. Alta probabilidade — vale pressionar.</div></div></li>
         <li class="tl-item"><div class="tl-dot b">📧</div><div class="tl-content"><div class="tl-title">E-mail mensal de benchmark — Trilha Auditoria</div><div class="tl-when">1º dia útil de Junho</div><div class="tl-note">Manter a cadência com os ~145 clientes já no Mercado Livre. Principal canal de nutrição da Trilha Auditoria.</div></div></li>
         <li class="tl-item"><div class="tl-dot o">🔥</div><div class="tl-content"><div class="tl-title">Reativar clientes Tradener / Recuperação Judicial</div><div class="tl-when">Esta semana — ~38 prospects identificados</div><div class="tl-note">Comercializadoras em crise (Tradener, IBS, Electra, Gamma). Alta urgência = ciclo de fechamento rápido. Abordagem direta com diagnóstico gratuito.</div></div></li>
       </ul>
@@ -389,7 +389,7 @@ td{padding:11px 14px;font-size:13px}
 <div id="tab-kanban" class="tab">
   <div class="sec-header">
     <div><div class="sec-title">Pipeline Kanban — Negócios Ativos</div><div class="sec-sub">Arraste mentalmente os cards pelo funil</div></div>
-    <span class="sec-badge" id="kanbanTotal">4 deals · R$14k/mês</span>
+    <span class="sec-badge" id="kanbanTotal">4 deals · R$12,3k/mês</span>
   </div>
 
   <div class="kanban" id="kanbanBoard"><div class="kanban-col col-1">
@@ -405,14 +405,13 @@ td{padding:11px 14px;font-size:13px}
         <div class="kanban-count">1</div>
         <div class="kanban-sub">R$3.500/mês</div>
       </div>
-      <div class="deal-card urgent">
-        <div class="dc-flag urgent">URGENTE</div>
+      <div class="deal-card">
         <div class="dc-company">Apolo</div>
         <div class="dc-amount">R$3.500<span style="font-size:12px;font-weight:400;color:var(--text-muted)">/mês</span></div>
-        <div class="dc-meta">Fecha: 15/05/2026</div>
-        <div class="dc-prob-bar"><div class="dc-prob-fill" style="width:30%;background:#1a4fa0"></div></div>
-        <div class="dc-prob-label">30% probabilidade</div>
-        <div class="dc-action"><strong>⚡</strong> Preparar e enviar proposta urgente — fecha em 3 dias</div>
+        <div class="dc-meta">Fecha: 22/06/2026</div>
+        <div class="dc-prob-bar"><div class="dc-prob-fill" style="width:40%;background:#1a4fa0"></div></div>
+        <div class="dc-prob-label">40% probabilidade</div>
+        <div class="dc-action"><strong>⚡</strong> Preparar material e confirmar pauta da reunião</div>
         <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/60177527837" target="_blank">Ver no HubSpot →</a>
       </div>
     </div><div class="kanban-col col-3">
@@ -432,13 +431,13 @@ td{padding:11px 14px;font-size:13px}
         <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/60108238120" target="_blank">Ver no HubSpot →</a>
       </div><div class="deal-card ">
         <div class="dc-flag normal">EM ABERTO</div>
-        <div class="dc-company">Ibéria Embalagens</div>
-        <div class="dc-amount">R$3.500<span style="font-size:12px;font-weight:400;color:var(--text-muted)">/mês</span></div>
+        <div class="dc-company">Alboss</div>
+        <div class="dc-amount">R$1.800<span style="font-size:12px;font-weight:400;color:var(--text-muted)">/mês</span></div>
         <div class="dc-meta">Fecha: 31/05/2026</div>
         <div class="dc-prob-bar"><div class="dc-prob-fill" style="width:50%;background:#16a34a"></div></div>
         <div class="dc-prob-label">50% probabilidade</div>
-        <div class="dc-action"><strong>⚡</strong> Confirmar recebimento + agendar call de alinhamento</div>
-        <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/60108237889" target="_blank">Ver no HubSpot →</a>
+        <div class="dc-action"><strong>⚡</strong> Acompanhar retorno da proposta enviada</div>
+        <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/60177577616" target="_blank">Ver no HubSpot →</a>
       </div>
     </div><div class="kanban-col col-4">
       <div class="kanban-header">
@@ -455,19 +454,19 @@ td{padding:11px 14px;font-size:13px}
       </div>
       <div class="deal-card urgent">
         <div class="dc-flag urgent">URGENTE</div>
-        <div class="dc-company">Nova Dublagem</div>
+        <div class="dc-company">Autometal S.A.</div>
         <div class="dc-amount">R$3.500<span style="font-size:12px;font-weight:400;color:var(--text-muted)">/mês</span></div>
-        <div class="dc-meta">Fecha: 15/05/2026</div>
+        <div class="dc-meta">Fecha: 29/05/2026</div>
         <div class="dc-prob-bar"><div class="dc-prob-fill" style="width:90%;background:#dc2626"></div></div>
         <div class="dc-prob-label">90% probabilidade</div>
-        <div class="dc-action"><strong>⚡</strong> Enviar contrato e confirmar data de assinatura — HOJE</div>
-        <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/60142186256" target="_blank">Ver no HubSpot →</a>
+        <div class="dc-action"><strong>⚡</strong> Confirmar reunião e preparar proposta comercial</div>
+        <a class="dc-link" href="https://app.hubspot.com/contacts/5123746/record/0-3/60234052693" target="_blank">Ver no HubSpot →</a>
       </div>
     </div><div class="kanban-col col-6">
       <div class="kanban-header">
         <div class="kanban-stage">Ganho</div>
         <div class="kanban-count">24</div>
-        <div class="kanban-sub">clientes ativos</div>
+        
       </div>
       <div class="deal-card"><div class="dc-company" style="color:var(--green)">✅ Tifilorm</div><div class="dc-amount" style="color:var(--green)">R$1.500/mês</div><div class="dc-meta">Mar/2025</div></div><div class="deal-card"><div class="dc-company" style="color:var(--green)">✅ GH Group</div><div class="dc-amount" style="color:var(--green)">R$2.500/mês</div><div class="dc-meta">Mai/2024</div></div><div class="deal-card"><div class="dc-company" style="color:var(--green)">✅ MSP</div><div class="dc-amount" style="color:var(--green)">R$5.600/mês</div><div class="dc-meta">Mai/2024</div></div><div style="text-align:center;font-size:11px;color:var(--text-muted);padding:8px">+ 21 outros clientes</div>
     </div></div>
@@ -494,8 +493,8 @@ td{padding:11px 14px;font-size:13px}
     <div class="insight-card priority">
       <div class="insight-tag">🚨 Prioridade Máxima</div>
       <div class="insight-title">Dois deals fecham em 3 dias</div>
-      <div class="insight-body">Nova Dublagem (90% prob.) e Apolo (30% prob.) fecham em 15/05. Juntos representam R$7.000/mês = R$84.000/ano. Nova Dublagem está praticamente fechada — só precisa do contrato assinado. Apolo ainda precisa receber a proposta.</div>
-      <div class="insight-action">⚡ Hoje: enviar contrato Nova Dublagem + proposta Apolo</div>
+      <div class="insight-body">Nova Dublagem (R$2.300/mês) e Ibéria Embalagens (R$3.500/mês) foram fechados esta semana, somando R$5.800/mês = R$69.600/ano. Confirmar onboarding com cada cliente e registrar no CRM. Foco agora em Autometal (11 dias) e SuperLigas (13 dias).</div>
+      <div class="insight-action">⚡ Agora: onboarding Nova Dublagem + Ibéria · Follow-up SuperLigas e Autometal</div>
     </div>
     <div class="insight-card opportunity">
       <div class="insight-tag">💚 Oportunidade</div>
@@ -518,8 +517,8 @@ td{padding:11px 14px;font-size:13px}
     <div class="insight-card opportunity" style="grid-column:1/-1">
       <div class="insight-tag">📈 Potencial de Receita</div>
       <div class="insight-title">Se fechar os 4 deals desta semana: +R$168.000/ano</div>
-      <div class="insight-body">Nova Dublagem (R$3.500) + Apolo (R$3.500) + SuperLigas (R$3.500) + Ibéria Embalagens (R$3.500) = <strong>R$14.000/mês</strong>. Anualizado: <strong>R$168.000/ano</strong> somados aos clientes existentes. Com as 2 propostas adicionais que Bruno mencionou, esse número pode chegar a R$196.000/ano só com este mês.</div>
-      <div class="insight-action">→ Meta da semana: pelo menos 2 contratos assinados (Nova Dublagem + Apolo)</div>
+      <div class="insight-body">Autometal (R$3.500) + SuperLigas (R$3.500) + Apolo (R$3.500) + Alboss (R$1.800) = <strong>R$12.300/mês</strong> em pipeline. Se fechar todos: <strong>R$147.600/ano</strong> adicionais. Somado aos 2 clientes fechados esta semana (+R$69.600/ano), o mês de maio pode gerar mais de <strong>R$217.000/ano</strong> em contratos.</div>
+      <div class="insight-action">→ Meta da semana: fechar Autometal + SuperLigas. Já temos 2 de 4 fechados em maio!</div>
     </div>
   </div>
 
@@ -643,25 +642,27 @@ td{padding:11px 14px;font-size:13px}
 
 <!-- FOOTER -->
 <div class="footer">
-  Dashboard gerado automaticamente · <strong>Solver Energia</strong> · Dados: HubSpot CRM · Atualizado em <span id="footerDate">12/05/2026 07:00</span><br>
+  Dashboard gerado automaticamente · <strong>Solver Energia</strong> · Dados: HubSpot CRM · Atualizado em <span id="footerDate">19/05/2026 07:00</span><br>
   <a href="https://app.hubspot.com/contacts/5123746/deals" target="_blank" style="color:var(--blue)">Ver pipeline completo no HubSpot →</a>
 </div>
 
 <script>
 // ══════════════════════════════════════
-// DADOS EMBARCADOS (gerado em 12/05/2026)
+// DADOS EMBARCADOS (gerado em 19/05/2026)
 // ══════════════════════════════════════
 const DATA = {
-  updatedAt: '12/05/2026 07:00',
+  updatedAt: '19/05/2026 07:00',
   activeDeals: [
-    { id:'60142186256', company:'Nova Dublagem', stage:'contractsent', stageLabel:'Chamou p/ negociação', amount:3500, closeDate:'2026-05-15', prob:0.90, daysLeft:3, action:'Enviar contrato e confirmar data de assinatura — HOJE' },
-    { id:'60177527837', company:'Apolo', stage:'qualifiedtobuy', stageLabel:'Agendou reunião', amount:3500, closeDate:'2026-05-15', prob:0.30, daysLeft:3, action:'Preparar e enviar proposta urgente — fecha em 3 dias' },
-    { id:'60108238120', company:'SuperLigas', stage:'presentationscheduled', stageLabel:'Envio de proposta', amount:3500, closeDate:'2026-05-31', prob:0.50, daysLeft:19, action:'Follow-up: verificar dúvidas sobre a proposta e avançar' },
-    { id:'60108237889', company:'Ibéria Embalagens', stage:'presentationscheduled', stageLabel:'Envio de proposta', amount:3500, closeDate:'2026-05-31', prob:0.50, daysLeft:19, action:'Confirmar recebimento + agendar call de alinhamento' },
+    { id:'60234052693', company:'Autometal S.A.', stage:'qualifiedtobuy', stageLabel:'Agendou Reunião', amount:3500, closeDate:'2026-05-29', prob:0.40, daysLeft:11, action:'Confirmar reunião e preparar proposta comercial' },
+    { id:'60108238120', company:'SuperLigas', stage:'presentationscheduled', stageLabel:'Envio de Proposta', amount:3500, closeDate:'2026-05-31', prob:0.60, daysLeft:13, action:'Follow-up urgente — verificar dúvidas e acelerar decisão' },
+    { id:'60177527837', company:'Apolo', stage:'qualifiedtobuy', stageLabel:'Agendou Reunião', amount:3500, closeDate:'2026-06-22', prob:0.40, daysLeft:35, action:'Preparar material e confirmar pauta da reunião' },
+    { id:'60177577616', company:'Alboss', stage:'presentationscheduled', stageLabel:'Envio de Proposta', amount:1800, closeDate:'2026-07-14', prob:0.60, daysLeft:57, action:'Acompanhar retorno da proposta enviada' },
   ],
   stageOrder:['appointmentscheduled','qualifiedtobuy','presentationscheduled','decisionmakerboughtin','contractsent','closedwon'],
   stageNames:['Abordagem','Agendou Reunião','Envio Proposta','Solicitou Contrato','Negociação','Ganho'],
   wonDeals:[
+    {id:'60142186256',company:'Nova Dublagem',amount:2300,date:'Mai/2026'},
+    {id:'60108237889',company:'Ibéria Embalagens',amount:3500,date:'Mai/2026'},
     {id:'35264848937',company:'Tifilorm',amount:1500,date:'Mar/2025'},
     {id:'19592518748',company:'GH Group',amount:2500,date:'Mai/2024'},
     {id:'19380858454',company:'MSP',amount:5600,date:'Mai/2024'},
@@ -729,7 +730,7 @@ const DATA = {
     {id:'1465',company:'Glassec Viracon',contact:'Daniel Scarpato',role:'Dir. Industrial',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2024-07-01'},
     {id:'1801',company:'Bom Sabor',contact:'Gildo de Oliveira',role:'Comprador Sênior',track:'apresentacao',status:'IN_PROGRESS',lastActivity:'2024-05-13'},
   ],
-  totalContacts: 563
+  totalContacts: 582
 };
 
 // ══════════════════════════════════════
