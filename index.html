@@ -3,7 +3,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Solver Energia — Pipeline de Prospecção</title>
-<script src="./Solver Energia — Pipeline de Prospecção_files/chart.umd.min.js.download"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 <style>
 :root {
   --blue-dark: #0a2d5e;
@@ -614,10 +614,10 @@ td{padding:11px 14px;font-size:13px}
 <!-- ══════════════ TAB: HISTÓRICO ══════════════ -->
 <div id="tab-history" class="tab">
   <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr)">
-    <div class="kpi-card c-blue"><div class="kpi-glow"></div><div class="kpi-label">Total de deals</div><div class="kpi-value">99</div><div class="kpi-sub">Desde 2018</div></div>
-    <div class="kpi-card c-green"><div class="kpi-glow"></div><div class="kpi-label">Clientes ganhos</div><div class="kpi-value">24</div><div class="kpi-sub">Taxa ~24%</div></div>
-    <div class="kpi-card c-teal"><div class="kpi-glow"></div><div class="kpi-label">Receita conquistada</div><div class="kpi-value">R$59,5k</div><div class="kpi-sub">Gestão de energia · /mês acum.</div></div>
-    <div class="kpi-card c-orange"><div class="kpi-glow"></div><div class="kpi-label">Ticket médio ganho</div><div class="kpi-value">R$2,6k</div><div class="kpi-sub">Por cliente · mensal</div></div>
+    <div class="kpi-card c-blue"><div class="kpi-glow"></div><div class="kpi-label">Total de deals</div><div class="kpi-value">102</div><div class="kpi-sub">Desde 2018</div></div>
+    <div class="kpi-card c-green"><div class="kpi-glow"></div><div class="kpi-label">Clientes ganhos</div><div class="kpi-value">26</div><div class="kpi-sub">Taxa ~25%</div></div>
+    <div class="kpi-card c-teal"><div class="kpi-glow"></div><div class="kpi-label">Receita conquistada</div><div class="kpi-value">R$65,3k</div><div class="kpi-sub">Gestão de energia · /mês acum.</div></div>
+    <div class="kpi-card c-orange"><div class="kpi-glow"></div><div class="kpi-label">Ticket médio ganho</div><div class="kpi-value">R$2,5k</div><div class="kpi-sub">Por cliente · mensal</div></div>
   </div>
   <div class="g2">
     <div class="card">
@@ -908,7 +908,7 @@ function renderInsightsChart() {
 function renderTracks() {
   const tracks = [
     { cls:'a', icon:'🏭', name:'Apresentação', sub:'Mercado Cativo → Livre', count:'~380', stages:[
-      {n:1,name:'Abordagem inicial',sub:'LinkedIn / e-mail',badge:'~380',live:true},{n:2,name:'Agendou reunião',sub:'Demonstrou interesse',badge:'–'},{n:3,name:'Envio de proposta',sub:'Diagnóstico realizado',badge:'–'},{n:4,name:'Solicitou contrato',sub:'Proposta aceita',badge:'–'},{n:5,name:'Chamou p/ negociação',sub:'Revisão de termos',badge:'–'},{n:6,name:'✅ Negócio Ganho',sub:'Contrato assinado',badge:'24 hist.',live:true}
+      {n:1,name:'Abordagem inicial',sub:'LinkedIn / e-mail',badge:'~380',live:true},{n:2,name:'Agendou reunião',sub:'Demonstrou interesse',badge:'–'},{n:3,name:'Envio de proposta',sub:'Diagnóstico realizado',badge:'–'},{n:4,name:'Solicitou contrato',sub:'Proposta aceita',badge:'–'},{n:5,name:'Chamou p/ negociação',sub:'Revisão de termos',badge:'–'},{n:6,name:'✅ Negócio Ganho',sub:'Contrato assinado',badge:'26 hist.',live:true}
     ], criteria:'Consumo ≥ 500kW/mês, não migrada ao Mercado Livre.' },
     { cls:'b', icon:'⚡', name:'Auditoria / Curto Prazo', sub:'Já no Mercado Livre', count:'~145', stages:[
       {n:1,name:'Nurture Mensal',sub:'E-mail benchmark enviado',badge:'Lista ativa',live:true},{n:2,name:'Abordagem ativa',sub:'Diferença >15% detectada',badge:'–'},{n:3,name:'Diagnóstico',sub:'Análise da conta',badge:'–'},{n:4,name:'Envio de proposta',sub:'Auditoria + gestão',badge:'–'},{n:5,name:'Negociação',sub:'Ajuste de escopo',badge:'–'},{n:6,name:'✅ Negócio Ganho',sub:'Contrato assinado',badge:'–'}
