@@ -3,7 +3,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Solver Energia — Pipeline de Prospecção</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <style>
 :root {
   --blue-dark: #0a2d5e;
@@ -377,7 +377,7 @@ td{padding:11px 14px;font-size:13px}
         <li class="tl-item"><div class="tl-dot g">🎉</div><div class="tl-content"><div class="tl-title">Nova Dublagem + Ibéria Embalagens — FECHADOS! Bem-vindos clientes!</div><div class="tl-when">Concluído esta semana — +R$5.800/mês adicionados à carteira</div><div class="tl-note">Nova Dublagem (R$2.300) e Ibéria Embalagens (R$3.500) viraram clientes. Confirmar início de gestão e onboarding com cada um.</div></div></li>
         <li class="tl-item"><div class="tl-dot o">⚡</div><div class="tl-content"><div class="tl-title">Autometal S.A. — Confirmar reunião (fecha 29/05 · 11 dias)</div><div class="tl-when">Esta semana — Probabilidade 40% · R$3.500/mês</div><div class="tl-note">Reunião agendada. Preparar proposta personalizada e confirmar pauta. Prazo se aproximando — não deixar esfriar.</div></div></li>
         <li class="tl-item"><div class="tl-dot o">📄</div><div class="tl-content"><div class="tl-title">SuperLigas — Follow-up urgente de proposta (fecha 31/05 · 13 dias)</div><div class="tl-when">Até quinta-feira — Probabilidade 60% · R$3.500/mês</div><div class="tl-note">Proposta enviada. Ligar para verificar dúvidas, objeções e acelerar decisão antes do prazo. Alta probabilidade — vale pressionar.</div></div></li>
-        <li class="tl-item"><div class="tl-dot b">📧</div><div class="tl-content"><div class="tl-title">E-mail mensal de benchmark — Trilha Auditoria</div><div class="tl-when">1º dia útil de Junho</div><div class="tl-note">Manter a cadência com os ~145 clientes já no Mercado Livre. Principal canal de nutrição da Trilha Auditoria.</div></div></li>
+        <li class="tl-item"><div class="tl-dot b">📧</div><div class="tl-content"><div class="tl-title">E-mail mensal de benchmark — Trilha Auditoria</div><div class="tl-when">1º dia útil de Junho</div><div class="tl-note">Manter a cadência com os ~892 clientes já no Mercado Livre. Principal canal de nutrição da Trilha Auditoria.</div></div></li>
         <li class="tl-item"><div class="tl-dot o">🔥</div><div class="tl-content"><div class="tl-title">Reativar clientes Tradener / Recuperação Judicial</div><div class="tl-when">Esta semana — ~38 prospects identificados</div><div class="tl-note">Comercializadoras em crise (Tradener, IBS, Electra, Gamma). Alta urgência = ciclo de fechamento rápido. Abordagem direta com diagnóstico gratuito.</div></div></li>
       </ul>
     </div>
@@ -590,7 +590,7 @@ td{padding:11px 14px;font-size:13px}
       <div style="padding:10px 14px;background:var(--bg);border-top:1px solid var(--border);font-size:11px;color:var(--text-muted)"><strong>Critério:</strong> Consumo ≥ 500kW/mês, não migrada ao Mercado Livre.</div>
     </div>
     <div class="track-card">
-      <div class="track-head b"><div class="track-icon">⚡</div><div><div class="track-name">Auditoria / Curto Prazo</div><div class="track-sub">Já no Mercado Livre · ~145 prospects</div></div></div>
+      <div class="track-head b"><div class="track-icon">⚡</div><div><div class="track-name">Auditoria / Curto Prazo</div><div class="track-sub">Já no Mercado Livre · ~892 prospects</div></div></div>
       <div class="track-stages"><div class="track-stage"><div class="ts-num">1</div><div><div class="ts-name">Nurture Mensal</div><div class="ts-sub">E-mail benchmark enviado</div></div><span class="ts-badge live">Lista ativa</span></div><div class="track-stage"><div class="ts-num">2</div><div><div class="ts-name">Abordagem ativa</div><div class="ts-sub">Diferença &gt;15% detectada</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">3</div><div><div class="ts-name">Diagnóstico</div><div class="ts-sub">Análise da conta</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">4</div><div><div class="ts-name">Envio de proposta</div><div class="ts-sub">Auditoria + gestão</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">5</div><div><div class="ts-name">Negociação</div><div class="ts-sub">Ajuste de escopo</div></div><span class="ts-badge idle">–</span></div><div class="track-stage"><div class="ts-num">6</div><div><div class="ts-name">✅ Negócio Ganho</div><div class="ts-sub">Contrato assinado</div></div><span class="ts-badge idle">–</span></div></div>
       <div style="padding:10px 14px;background:var(--bg);border-top:1px solid var(--border);font-size:11px;color:var(--text-muted)"><strong>Critério:</strong> Contrato vencendo em &lt;6 meses ou preço acima do benchmark.</div>
     </div>
@@ -651,12 +651,13 @@ td{padding:11px 14px;font-size:13px}
 // DADOS EMBARCADOS (gerado em 19/05/2026)
 // ══════════════════════════════════════
 const DATA = {
-  updatedAt: '25/05/2026 16:51',
+  updatedAt: '01/06/2026 00:00',
   activeDeals: [
-    { id:'60234052693', company:'Autometal S.A.', stage:'qualifiedtobuy', stageLabel:'Agendou Reunião', amount:3500, closeDate:'2026-05-29', prob:0.40, daysLeft:4, action:'Confirmar reunião e preparar proposta comercial' },
-    { id:'60108238120', company:'SuperLigas', stage:'presentationscheduled', stageLabel:'Envio de Proposta', amount:3500, closeDate:'2026-05-31', prob:0.60, daysLeft:6, action:'Follow-up da proposta — verificar dúvidas e acelerar decisão' },
-    { id:'60177527837', company:'Apolo', stage:'presentationscheduled', stageLabel:'Envio de Proposta', amount:4000, closeDate:'2026-07-09', prob:0.60, daysLeft:45, action:'Follow-up da proposta — verificar dúvidas e acelerar decisão' },
-    { id:'60177577616', company:'Alboss', stage:'presentationscheduled', stageLabel:'Envio de Proposta', amount:1800, closeDate:'2026-07-14', prob:0.60, daysLeft:50, action:'Follow-up da proposta — verificar dúvidas e acelerar decisão' }
+    { id:'60234052693', company:'Autometal S.A.', stage:'qualifiedtobuy', stageLabel:'Agendou Reunião', amount:3500, closeDate:'2026-05-29', prob:0.4, daysLeft:-3, action:'Confirmar reunião e preparar proposta comercial' },
+    { id:'60177577616', company:'Alboss', stage:'presentationscheduled', stageLabel:'Envio de Proposta', amount:1800, closeDate:'2026-07-14', prob:0.6, daysLeft:43, action:'Follow-up da proposta — verificar dúvidas e acelerar decisão' },
+    { id:'60177527837', company:'Apolo', stage:'presentationscheduled', stageLabel:'Envio de Proposta', amount:4000, closeDate:'2026-07-09', prob:0.6, daysLeft:38, action:'Follow-up da proposta — verificar dúvidas e acelerar decisão' },
+    { id:'60108238120', company:'SuperLigas', stage:'presentationscheduled', stageLabel:'Envio de Proposta', amount:3500, closeDate:'2026-05-31', prob:0.6, daysLeft:-1, action:'Follow-up da proposta — verificar dúvidas e acelerar decisão' },
+    { id:'38113500489', company:'Grupo Braido - Gestão de Energia', stage:'presentationscheduled', stageLabel:'Envio de Proposta', amount:9000, closeDate:'2026-06-30', prob:0.6, daysLeft:29, action:'Follow-up da proposta — verificar dúvidas e acelerar decisão' }
   ],
   stageOrder:['appointmentscheduled','qualifiedtobuy','presentationscheduled','decisionmakerboughtin','contractsent','closedwon'],
   stageNames:['Abordagem','Agendou Reunião','Envio Proposta','Solicitou Contrato','Negociação','Ganho'],
@@ -910,7 +911,7 @@ function renderTracks() {
     { cls:'a', icon:'🏭', name:'Apresentação', sub:'Mercado Cativo → Livre', count:'~380', stages:[
       {n:1,name:'Abordagem inicial',sub:'LinkedIn / e-mail',badge:'~380',live:true},{n:2,name:'Agendou reunião',sub:'Demonstrou interesse',badge:'–'},{n:3,name:'Envio de proposta',sub:'Diagnóstico realizado',badge:'–'},{n:4,name:'Solicitou contrato',sub:'Proposta aceita',badge:'–'},{n:5,name:'Chamou p/ negociação',sub:'Revisão de termos',badge:'–'},{n:6,name:'✅ Negócio Ganho',sub:'Contrato assinado',badge:'26 hist.',live:true}
     ], criteria:'Consumo ≥ 500kW/mês, não migrada ao Mercado Livre.' },
-    { cls:'b', icon:'⚡', name:'Auditoria / Curto Prazo', sub:'Já no Mercado Livre', count:'~145', stages:[
+    { cls:'b', icon:'⚡', name:'Auditoria / Curto Prazo', sub:'Já no Mercado Livre', count:'~892', stages:[
       {n:1,name:'Nurture Mensal',sub:'E-mail benchmark enviado',badge:'Lista ativa',live:true},{n:2,name:'Abordagem ativa',sub:'Diferença >15% detectada',badge:'–'},{n:3,name:'Diagnóstico',sub:'Análise da conta',badge:'–'},{n:4,name:'Envio de proposta',sub:'Auditoria + gestão',badge:'–'},{n:5,name:'Negociação',sub:'Ajuste de escopo',badge:'–'},{n:6,name:'✅ Negócio Ganho',sub:'Contrato assinado',badge:'–'}
     ], criteria:'Contrato vencendo em <6 meses ou preço acima do benchmark.' },
     { cls:'c', icon:'🔥', name:'Tradener / RJ', sub:'Comercializadoras em crise', count:'~38', stages:[
@@ -1101,4 +1102,68 @@ window.addEventListener('load', () => {
 </script>
 
 
+
+<div id="tab-campaigns" class="tab-pane" style="display:none">
+  <div style="padding:20px">
+    <h2 style="color:#0a2d5e;font-size:18px;margin:0 0 16px;border-bottom:2px solid #e2e8f0;padding-bottom:10px;">📧 Campanhas da Semana</h2>
+    
+    <!-- Email campaign card -->
+    <div style="background:linear-gradient(135deg,#eff6ff,#f0fdf4);border:1px solid #93c5fd;border-radius:12px;padding:20px;margin-bottom:20px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+        <div>
+          <div style="font-size:13px;color:#64748b;margin-bottom:4px;">01/06/2026 · Trilha Auditoria / Curto Prazo</div>
+          <h3 style="margin:0;color:#0a2d5e;font-size:16px;">⚡ E-mail Curto Prazo — Benchmark de Energia</h3>
+        </div>
+        <span style="background:#dcfce7;color:#166534;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">Enviado</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;">
+        <div style="background:white;border-radius:8px;padding:12px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+          <div style="font-size:24px;font-weight:800;color:#1a4fa0;">892</div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px;">Enviados</div>
+        </div>
+        <div style="background:white;border-radius:8px;padding:12px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+          <div style="font-size:24px;font-weight:800;color:#16a34a;">397</div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px;">Aberturas</div>
+        </div>
+        <div style="background:white;border-radius:8px;padding:12px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+          <div style="font-size:24px;font-weight:800;color:#0a2d5e;">44%</div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px;">Taxa Abertura</div>
+        </div>
+        <div style="background:white;border-radius:8px;padding:12px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+          <div style="font-size:24px;font-weight:800;color:#7c3aed;">495</div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px;">Não abriram</div>
+        </div>
+      </div>
+      <div style="margin-top:16px;padding:12px;background:rgba(16,163,74,0.08);border-radius:8px;border-left:3px solid #16a34a;">
+        <strong style="color:#166534;font-size:13px;">🎯 Próxima ação sugerida:</strong>
+        <span style="color:#374151;font-size:13px;margin-left:6px;">Acionar os 397 que abriram com follow-up personalizado — ligação ou mensagem direta nos próximos 2-3 dias enquanto o interesse está quente.</span>
+      </div>
+    </div>
+    
+    <!-- Top engajados -->
+    <h3 style="color:#0a2d5e;font-size:15px;margin:0 0 12px;">🔥 Top Engajados — abriram hoje/ontem</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="background:#0a2d5e;color:white;">
+          <th style="padding:10px 12px;text-align:left;border-radius:6px 0 0 0;">Contato</th>
+          <th style="padding:10px 12px;text-align:left;">E-mail</th>
+          <th style="padding:10px 12px;text-align:left;border-radius:0 6px 0 0;">Última Abertura</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:9px 12px;font-weight:600;">Fabiano Moura Toth</td><td style="padding:9px 12px;color:#64748b;">fabiano.toth@glassecviracon.com.br</td><td style="padding:9px 12px;color:#16a34a;">02/06 12:17</td></tr>
+        <tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0;"><td style="padding:9px 12px;font-weight:600;">Gilberto Marzari</td><td style="padding:9px 12px;color:#64748b;">gilberto@marzari.com.br</td><td style="padding:9px 12px;color:#16a34a;">02/06 11:58</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:9px 12px;font-weight:600;">Eduardo Masutti</td><td style="padding:9px 12px;color:#64748b;">eduardo@newton.com.br</td><td style="padding:9px 12px;color:#16a34a;">01/06 22:36</td></tr>
+        <tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0;"><td style="padding:9px 12px;font-weight:600;">Wilson Silva Junior</td><td style="padding:9px 12px;color:#64748b;">junior@aswbrasil.com.br</td><td style="padding:9px 12px;color:#16a34a;">01/06 21:07</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:9px 12px;font-weight:600;">Caio Marcelo S. Costa</td><td style="padding:9px 12px;color:#64748b;">caio@stamaria.ind.br</td><td style="padding:9px 12px;color:#16a34a;">01/06 20:38</td></tr>
+        <tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0;"><td style="padding:9px 12px;font-weight:600;">Carlos Alberto Magnusson</td><td style="padding:9px 12px;color:#64748b;">carlos.magnusson@weidplas.com.br</td><td style="padding:9px 12px;color:#16a34a;">01/06 20:34</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:9px 12px;font-weight:600;">Silvia Leite Moura Fonseca</td><td style="padding:9px 12px;color:#64748b;">silvia@acoservice.com.br</td><td style="padding:9px 12px;color:#16a34a;">01/06 18:58</td></tr>
+        <tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0;"><td style="padding:9px 12px;font-weight:600;">Cynthia Santanna</td><td style="padding:9px 12px;color:#64748b;">cynthia.santanna@suominencorp.com</td><td style="padding:9px 12px;color:#16a34a;">01/06 18:57</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:9px 12px;font-weight:600;">Ricardo Lenzi</td><td style="padding:9px 12px;color:#64748b;">ricardo@fernandezpapel.com.br</td><td style="padding:9px 12px;color:#16a34a;">01/06 18:56</td></tr>
+        <tr style="background:#f8fafc;"><td style="padding:9px 12px;font-weight:600;">Gabriella Scapinelli</td><td style="padding:9px 12px;color:#64748b;">gabriella@gresca.com.br</td><td style="padding:9px 12px;color:#16a34a;">01/06 18:36</td></tr>
+      </tbody>
+    </table>
+    <p style="color:#64748b;font-size:12px;margin-top:10px;text-align:center;">Mostrando 10 de 397 contatos que abriram · <a href="https://app.hubspot.com/contacts/5123746/contacts/list/view/all" style="color:#1a4fa0;">Ver todos no HubSpot →</a></p>
+  </div>
+</div>
 </body></html>
